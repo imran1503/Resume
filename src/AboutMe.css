@@ -1,0 +1,61 @@
+.aboutMe{
+    overflow-y: hidden;
+    /*background-image: url('../../public/images/aboutMeBackground.jpeg');
+    background-size: 100% 100%; */
+    /*background-color: rgb(90, 150, 186);*/
+    background-color: antiquewhite;
+}
+
+
+.titleRow > h1{
+    padding-left: 20%;
+    justify-self: center;
+    /*color:  rgb(7, 31, 3);*/
+    color:black;
+    font-size: 40px;
+
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.separator {
+  height: 3px;
+  /*background-color: rgb(25, 102, 9);*/
+   background-color: black;
+  border: none;
+  width: 100%;
+
+}
+.flexbox-container_DescRow {
+    display: flex;
+    flex-direction: row;
+}
+.descRow{
+    width:50%;
+    margin-left: 10%;
+    position: relative;
+
+
+}
+
+.descRow > p{
+
+    color:black;
+    margin-left: 20%;
+    position: relative;
+    text-shadow: 1px;
+
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.descRowImg{
+    max-width: 16%;
+    max-height:16%;
+    margin-right: 5%;
+    justify-content: center;
+}
