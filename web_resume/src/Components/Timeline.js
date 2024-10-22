@@ -7,9 +7,36 @@ function Timeline(){
         <div className='body'>
             <div className='Timeline'>
                 <p><br/><br/><br/></p>
-
-                {/* THE BEAT REVIVAL TEAM ------------------------------------------*/}
+                {/* INSULPLANT -----------------------------------------------------*/}
                 <div className='container left-container first-container'>
+                    <img src={process.env.PUBLIC_URL + '/images/InsulplantSmallLogo.png'} alt='In' />
+                    <div className='text-box'>
+                        <h2><i class="fa-solid fa-briefcase"></i>INSULPLANT</h2>
+                        <small>June 3 2024 - November 31 2024</small>
+                        <p>
+                            During my time at InsulPlant, I worked independently under the supervision of a senior developer.
+                            I assisted the senior developer debug and research solutions to complex issues. 
+                            My primary objective throughout my contract was to create a complete test suite for the existing code base.
+                            After completing testing for the backend logic I moved to discovering and refactoring unefficent code segments.
+                            For example, I spent time refactoring the code to increase the readability and maintainability of the code in future. 
+                            <br/><br/>
+                            &emsp;❖ Increased the percentage of the codebase tested and documeted from 5% to 90%. <br/>
+                            &emsp;❖ Utilized white box unit tests to verify the validity of all of the backend logic functions.  <br/>
+                            &emsp;❖ Increased the percentage of the code base that was documented from 0% to 90%. <br/>
+                            &emsp;❖ Assisted in the creation and optimization of a large table view containing hundreds of rows of data.  <br/>
+                        </p>
+                        <span className='leftSpanArrow'></span>
+                        <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} 
+                            MyLink={
+                                "https://insulplant.com/"
+                            }
+                        >
+                            InsulPlant HomePage! <i class="fa-solid fa-link"></i>
+                        </Button>
+                    </div>
+                </div>
+                {/* THE BEAT REVIVAL TEAM ------------------------------------------*/}
+                <div className='container right-container '>
                     <img src={process.env.PUBLIC_URL + '/images/MECLogo.png'} alt='mec' />
                     <div className='text-box'>
                         <h2><i class="fa-solid fa-briefcase"></i>THE BEAT REVIVAL PROJECT</h2>
@@ -23,7 +50,7 @@ function Timeline(){
                             &emsp;❖ Planning a server to properly simulate the old functionality to work with EA’s Blaze authentication server.<br/>
 
                         </p>
-                        <span className='leftSpanArrow'></span>
+                        <span className='rightSpanArrow'></span>
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={
                             "https://beatrevival.me/"
                             }
@@ -34,7 +61,7 @@ function Timeline(){
                 </div>
 
                 {/* DECRYPTION -----------------------------------------------------*/}
-                <div className='container right-container'>
+                <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/GameJamLogo.png'} alt='mec' />
                     <div className='text-box'>
                         <h2><i class="fa-solid fa-briefcase"></i>DECRYPTION </h2>
@@ -46,7 +73,7 @@ function Timeline(){
                             &emsp;❖ Developed in the Godot engine using GDScript.<br/>
                             &emsp;❖ Researched existing technologies to implement in our game.<br/>
                         </p>
-                        <span className='rightSpanArrow'></span>
+                        <span className='leftSpanArrow'></span>
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={
                             "https://artemis1503.itch.io/decryption"
                             }
@@ -57,7 +84,7 @@ function Timeline(){
                 </div>
 
                 {/* UNDERGRADUATE PROJECT ------------------------------------------*/}
-                <div className='container left-container'>
+                <div className='container right-container'>
                     <img src={process.env.PUBLIC_URL + '/images/CarletonLogo.jpg'} alt='mec' />
                     <div className='text-box undergraduateProject'>
                         <h2><i class="fa-solid fa-graduation-cap"></i>CARLETON UNIVERSITY </h2>
@@ -76,7 +103,7 @@ function Timeline(){
                             The data from the lidar and cameras would then be processed so that the vehicle could comprehend its surroundings.
 
                         </p>
-                        <span className='leftSpanArrow'></span>
+                        <span className='rightSpanArrow'></span>
 
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={
                             "https://github.com/imran1503/IntersectionControl"
@@ -94,7 +121,7 @@ function Timeline(){
                 </div>
 
                 {/* Tiptop Tailors--------------------------------------------------*/}
-                <div className='container right-container'>
+                <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/TTLogo.png'} alt='mec' />
                     <div className='text-box'>
                         <h2><i class="fa-solid fa-briefcase"></i>TIPTOP TAILORS </h2>
@@ -105,13 +132,13 @@ function Timeline(){
                             ❖ Maintained inventory records.<br/>
                             ❖ Opened and closed the store.<br/>
                             ❖ Interacted with customers by answering their questions and addressing their needs, showing my ability to prioritize customer satisfaction.</p>
-                        <span className='rightSpanArrow'></span>
+                        <span className='leftSpanArrow'></span>
 
                     </div>
                 </div>
 
                 {/* Laurier Optical-------------------------------------------------*/}
-                <div className='container left-container first-container'>
+                <div className='container right-container first-container'>
                     <img src={process.env.PUBLIC_URL + '/images/LOLogo.jfif'} alt='mec' />
 
                     <div className='text-box'>
@@ -125,14 +152,14 @@ function Timeline(){
                         ❖ Assumed responsibility for closing the store at the end of business hours.<br/>
                         ❖ Demonstrated meticulous attention to detail by managing and organizing daily paper files for the optometrist.<br/>
                         </p>
-                        <span className='leftSpanArrow'></span>
+                        <span className='rightSpanArrow'></span>
 
 
                     </div>
                 </div>
 
                 {/* MINI MONKEY SURVEY----------------------------------------------*/}
-                <div className='container right-container'>
+                <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/CarletonLogo.jpg'} alt='mec' />
                     <div className='text-box'>
                         <h2><i class="fa-solid fa-graduation-cap"></i>CARLETON UNIVERSITY </h2>
@@ -145,7 +172,7 @@ function Timeline(){
                             ❖	Created the backend histogram statistics page based on the answers provided. <br/>
 
                         </p>
-                        <span className='rightSpanArrow'></span>
+                        <span className='leftSpanArrow'></span>
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={
                             "https://github.com/EveningStarlight/SYSC_4806_Project"
                             }
@@ -156,7 +183,7 @@ function Timeline(){
                 </div>
 
                 {/* ELEVATOR PROJECT------------------------------------------------*/}
-                <div className='container left-container'>
+                <div className='container right-container'>
                     <img src={process.env.PUBLIC_URL + '/images/CarletonLogo.jpg'} alt='mec' />
                     <div className='text-box'>
                         <h2><i class="fa-solid fa-graduation-cap"></i>CARLETON UNIVERSITY </h2>
@@ -169,7 +196,7 @@ function Timeline(){
                             ❖	Created the UML diagrams, and scheduling meetings.<br/>
 
                         </p>
-                        <span className='leftSpanArrow'></span>
+                        <span className='rightSpanArrow'></span>
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={
                             "https://github.com/imran1503/SYSC-3303-Elevator-Simulator"
                             }
@@ -180,7 +207,7 @@ function Timeline(){
                 </div>
 
                 {/* FIRST ROBOTICS--------------------------------------------------*/}
-                <div className='container right-container'>
+                <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/MMRLogo.png'} alt='mec' />
                     <div className='text-box'>
                         <h2><i class="fa-solid fa-graduation-cap"></i>NASA FIRST ROBOTICS / MM ROBINSON HIGH SCHOOL </h2>
@@ -197,7 +224,7 @@ function Timeline(){
                             ❖ Liaised with machinists to guarantee parts were manufactured according to design specifications.<br/>
 
                         </p>
-                        <span className='rightSpanArrow'></span>
+                        <span className='leftSpanArrow'></span>
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={"https://mmrambotics.com/seasons/"}
                         >
                              Click for more info! <i class="fa-solid fa-link"></i>
