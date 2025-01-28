@@ -3,21 +3,60 @@
     /*background-image: url('../../public/images/aboutMeBackground.jpeg');
     background-size: 100% 100%; */
     /*background-color: rgb(90, 150, 186);*/
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
 }
 
-
-.titleRow > h1{
-    padding-left: 20%;
-    justify-self: center;
+@media all and (max-width: 1920px) and (min-width: 700px) {
+  .flex-container {
+    flex-direction: column;
+    -ms-flex-align: center;
+    margin: 0 20%;
+    
+  }
+  .flex-container >.AboutMeText {
+  
     /*color:  rgb(7, 31, 3);*/
     color:black;
-    font-size: 40px;
-
-    font-family: "Spectral", serif;
-    font-weight: 400;
-    font-style: normal;
-
+    font-size: 16px;
+    
+    padding-bottom: 20px;
+   
+  }
+  
+  .flex-container > .profileImage {
+    height: 275px;
+    width:  275px; 
+    display:block;
+    margin: auto; /* DOESN'T CENTER WITHOUT DISPLAY:BLOCK FOR SOME REASON*/
+    padding-bottom: 15px;
+  }
+}
+@media all and (max-width: 600px)  {
+  .flex-container {
+    flex-direction: column;
+    -ms-flex-align: center;
+    margin: 0 auto;
+    
+  }
+  .flex-container >.AboutMeText {
+  
+    /*color:  rgb(7, 31, 3);*/
+    color:black;
+    font-size: 16px;
+    
+    padding-bottom: 20px;
+    margin: 0 10%;
+   
+  }
+  
+  .flex-container > .profileImage {
+    height: 275px;
+    width:  275px; 
+    display:block;
+    margin: auto; /* DOESN'T CENTER WITHOUT DISPLAY:BLOCK FOR SOME REASON*/
+    padding-bottom: 15px;
+  }
+  
 }
 
 
@@ -29,3 +68,5 @@
   width: 100%;
 
 }
+
+

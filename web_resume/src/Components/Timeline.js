@@ -6,7 +6,7 @@ function Timeline(){
     return(
         <div className='body'>
             <div className='Timeline'>
-                <p><br/><br/><br/></p>
+                <p><br/><br/><br/></p> {/* Provides spacing above first text box*/}
                 {/* INSULPLANT -----------------------------------------------------*/}
                 <div className='container left-container first-container'>
                     <img src={process.env.PUBLIC_URL + '/images/InsulplantSmallLogo.png'} alt='In' />
