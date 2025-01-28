@@ -1,6 +1,7 @@
 import React from "react";
 import '../Components/AboutMe.css'
 
+
 function aboutMe(){
     return(
         <div className="aboutMe">
@@ -21,9 +22,7 @@ function aboutMe(){
                 </div>
 
             </div>
-            <div>
-            <   hr class="separator" />
-            </div>
+       
         </div>
     )
 }

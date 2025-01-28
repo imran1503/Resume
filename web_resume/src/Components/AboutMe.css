@@ -1,9 +1,7 @@
 .aboutMe{
     overflow-y: hidden;
-    /*background-image: url('../../public/images/aboutMeBackground.jpeg');
-    background-size: 100% 100%; */
     /*background-color: rgb(90, 150, 186);*/
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 }
 
 @media all and (max-width: 1920px) and (min-width: 700px) {
@@ -16,10 +14,10 @@
   .flex-container >.AboutMeText {
   
     /*color:  rgb(7, 31, 3);*/
-    color:black;
+    color:rgb(0, 0, 0);
     font-size: 16px;
     
-    padding-bottom: 20px;
+    padding-bottom: 50px;
    
   }
   

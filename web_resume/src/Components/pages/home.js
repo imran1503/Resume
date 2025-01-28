@@ -9,9 +9,7 @@ function Home(){
 
     return(
         <div>
-
             <div className='HeroSection-Home'>
-
                 <HeroSection/>
                 <AboutMe/>
             </div>
@@ -19,10 +17,7 @@ function Home(){
                 <ContactForm/>
             </div>
         </div>
-
     );
-
-
 }
 
 export default Home;
