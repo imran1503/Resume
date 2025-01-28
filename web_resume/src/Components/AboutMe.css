@@ -29,33 +29,3 @@
   width: 100%;
 
 }
-.flexbox-container_DescRow {
-    display: flex;
-    flex-direction: row;
-}
-.descRow{
-    width:50%;
-    margin-left: 10%;
-    position: relative;
-
-
-}
-
-.descRow > p{
-
-    color:black;
-    margin-left: 20%;
-    position: relative;
-    text-shadow: 1px;
-
-    font-family: "Spectral", serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-.descRowImg{
-    max-width: 16%;
-    max-height:16%;
-    margin-right: 5%;
-    justify-content: center;
-}
