@@ -5,18 +5,23 @@ import React from 'react';
 import ContactForm from '../ContactUs';
 import "../ContactUs.css";
 import "./home.css";
-function Home(){
 
+
+
+function Home(){
     return(
         <div className='home'>
             <div className='HeroSection-Home'>
                 <HeroSection/>
-              
             </div>
             <div className='AboutMeContactSection'>
                   <AboutMe/>
                   <ContactForm/>
             </div>
+            <div className='CarouselSection'>
+             
+            </div>
+            
         </div>
     );
 }
