@@ -21,8 +21,9 @@ function Home(){
             <div className='CarouselSection'>
              
             </div>
-            
+            <div></div>
         </div>
+        
     );
 }
 
