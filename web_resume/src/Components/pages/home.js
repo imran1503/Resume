@@ -4,17 +4,18 @@ import AboutMe from '../AboutMe'
 import React from 'react';
 import ContactForm from '../ContactUs';
 import "../ContactUs.css";
-import ContactMeHeroSection from '../ContactMeHeroSection';
+import "./home.css";
 function Home(){
 
     return(
-        <div>
+        <div className='home'>
             <div className='HeroSection-Home'>
                 <HeroSection/>
-                <AboutMe/>
+              
             </div>
-            <div className='ContactFormSection'>
-                <ContactForm/>
+            <div className='AboutMeContactSection'>
+                  <AboutMe/>
+                  <ContactForm/>
             </div>
         </div>
     );

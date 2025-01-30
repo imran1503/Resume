@@ -1,7 +1,5 @@
 .aboutMe{
     overflow-y: hidden;
-    /*background-color: rgb(90, 150, 186);*/
-    /* background-color: rgb(255, 255, 255); */
 }
 
 @media all and (max-width: 1920px) and (min-width: 700px) {
@@ -14,11 +12,13 @@
   .flex-container >.AboutMeText {
   
     /*color:  rgb(7, 31, 3);*/
-    color:rgb(0, 0, 0);
-    font-size: 16px;
-    
-    padding-bottom: 50px;
-   
+    color:rgb(255, 255, 255);
+    font-size: 18px;
+    margin-right: 7%;
+    padding-bottom: 5px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.5em; 
   }
   
   .flex-container > .profileImage {
@@ -36,14 +36,17 @@
     margin: 0 auto;
     
   }
-  .flex-container >.AboutMeText {
+  .flex-container >.AboutMeText  {
   
-    /*color:  rgb(7, 31, 3);*/
-    color:black;
-    font-size: 16px;
+   
+    color:rgb(255, 255, 255);
+    font-size: 24px;
     
     padding-bottom: 20px;
     margin: 0 10%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.5em; 
    
   }
   

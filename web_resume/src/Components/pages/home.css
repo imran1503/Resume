@@ -1,3 +1,8 @@
-.aboutMe-Home {
-    background-image: url('../../../public/images/laptop_BG_full.jpg') ;
+.home {
+    overflow-y: hidden; /* Hide scrollbars */
+}   
+.aboutMeContactSection{
+    background-image: url(../../../public/images/laptop_BG_full.jpg) ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
