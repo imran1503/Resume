@@ -18,9 +18,9 @@ function Home(){
                   <AboutMe/>
                   <ContactForm/>
             </div>
-            <div className='CarouselSection'>
+            {/* <div className='CarouselSection'>
              
-            </div>
+            </div> */}
             <div></div>
         </div>
         
