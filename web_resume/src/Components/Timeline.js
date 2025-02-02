@@ -22,7 +22,6 @@ function Timeline(){
                             <br/><br/>
                             &emsp;❖ Increased the percentage of the codebase tested and documeted from 5% to 90%. <br/>
                             &emsp;❖ Utilized white box unit tests to verify the validity of all of the backend logic functions.  <br/>
-                            &emsp;❖ Increased the percentage of the code base that was documented from 0% to 90%. <br/>
                             &emsp;❖ Assisted in the creation and optimization of a large table view containing hundreds of rows of data.  <br/>
                             &emsp;❖ Created and tested new features. <br/>
                             &emsp;❖ Worked in a team to develop solutions to complex problems. <br/>
