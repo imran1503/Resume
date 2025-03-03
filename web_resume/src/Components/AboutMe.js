@@ -15,7 +15,7 @@ function aboutMe(){
             
                 <div className="AboutMeText">
                     <p>
-                        Imran Latif is an aspiring software engineer who has gained experience through one professional role and a few personal projects.
+                        Imran Latif is an aspiring software engineer who has gained experience through professional and personal projects.
                         Imran is driven by curiosity, hard work, and a desire to contribute to meaningful, innovative solutions to complex problems.
                         Imran has developed skills in full stack development, APIs, debugging, and quality assurance. 
                         Imran is committed to continuous learning and is excited to take on new challenges and refine their skills in the fast-paced world of software development.
