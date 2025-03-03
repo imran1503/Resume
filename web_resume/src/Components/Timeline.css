@@ -1,7 +1,8 @@
 :root {
     --primary: #ffffff; /* COLOUR OF BOXES*/
     --BGC: #194569;
-    --BGI: url('../../public/images/expBGTest.jpg')
+    /* --BGI: url('../../public/images/expBGTest.jpg') */
+    --BGI: url('../../public/images/tallMETest.jpg' );
   }
 
 *{

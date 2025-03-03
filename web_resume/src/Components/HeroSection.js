@@ -16,7 +16,7 @@ function HeroSection(){
                 </h3>
 
                 <Button className='hero-btns' buttonStyle={"btn--outline"} buttonSize={'btn--medium'} MyLink={
-                    "https://drive.google.com/file/d/1RlSJk2MhVAVYau2QLtKK3MCfzF5nefJ2/view?usp=drive_link"
+                    "https://drive.google.com/file/d/1Tp7-Se9dSJ4hMdMYodGFUhxpN0utCoCU/view?usp=drive_link"
                     }
                 >
                     Download my Resume!

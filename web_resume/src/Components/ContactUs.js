@@ -36,7 +36,7 @@ const ContactForm = () => {
         <h3 className='subheadlineContact'>
           Contact Me
         </h3>
-        <p>Need to message me? Feel free to fill out the form below or message me over on linkedin.</p>
+        
       </div>
       <div className="ContactMeForm">
         <form ref={form} onSubmit={sendEmail}>
