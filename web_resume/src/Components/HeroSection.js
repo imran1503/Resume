@@ -13,9 +13,9 @@ function HeroSection(){
                 <h1 className='headline'>Hi, </h1>
                   <h1 className='headline'> I'm Imran </h1> 
                 <h3 className='subheadline'>
-                    Excited full stack developer in the making.  </h3>
+                    Excited full stack developer in the making!  </h3>
                     
-                 <h3 className='subheadline'>   Welcome to my portfolio site.
+                 <h3 className='subheadline'>   Welcome to my portfolio site 
                 </h3>
 
                 <Button className='hero-btns' buttonStyle={"btn--outline"} buttonSize={'btn--medium'} MyLink={
@@ -29,7 +29,7 @@ function HeroSection(){
                         2.25 0 0021 18v-1.5M7.5 12l4.5 4.5m0 0l4.5-4.5m-4.5
                         4.5V3" />
                     </svg>
-  Download my Resume!
+                    Download my Resume!
                 </Button>
             </div>
         </div>
