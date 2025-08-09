@@ -1,0 +1,97 @@
+/* SimpleCarousel.css */
+
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  user-select: none;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex-shrink: 0;
+  height: 500px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-arrow {
+  position: relative;
+  top: 50%;
+/*  transform: translateY(-50%); */
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-arrow.left {
+  left: 10px;
+  position: absolute;
+}
+
+.carousel-arrow.right {
+  right: 10px;
+    position: absolute;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background-color: #333;
+  transform: scale(1.2);
+}
+
+.carousel-caption {
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 0.5em 1em;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  font-size: 1em;
+}
+
+.carousel-content {
+  position: relative;
+  height: 100%;
+}

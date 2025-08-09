@@ -3,6 +3,7 @@
   /* background: url('../../public/images/HeroBGTest.png') center center/cover no-repeat   ; */
   background-color: antiquewhite;
   overflow-x: hidden;
+  width: full;
 }
 .header{
   justify-content: center;
@@ -10,6 +11,7 @@
   margin:auto;
   margin-right:30.5%;
   color:rgb(255, 255, 255);
+  width: full;
 }
 
 .subheadline{
@@ -40,7 +42,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  width: 165%;
+  width: full;
   justify-self: center;
   font-size: 16px;
   padding-left: 20%;

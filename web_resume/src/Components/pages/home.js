@@ -5,6 +5,7 @@ import React from 'react';
 import ContactForm from '../ContactUs';
 import "../ContactUs.css";
 import "./home.css";
+import Carousel from '../Carousel';
 
 
 
@@ -18,9 +19,9 @@ function Home(){
                   <AboutMe/>
                 
             </div>
-            {/* <div className='CarouselSection'>
-             
-            </div> */}
+            <div className='CarouselSection'>
+                <Carousel/>
+            </div> 
             <div></div>
         </div>
         
