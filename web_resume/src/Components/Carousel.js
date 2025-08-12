@@ -9,16 +9,14 @@ export default function Carousel({
   showIndicators = true,
   className = "simple-carousel full-width",
 }) {
-    const defaultItems = [
-        { src: process.env.PUBLIC_URL + "/images/2200Hang.jpg", alt: "2200" },
-        { src: process.env.PUBLIC_URL + "/images/vflHome.png", alt: "VFL image" , caption: "Home page of VFL, a full-stack web application that allows users to create and share custom fantasy rosters."},
-        { src: process.env.PUBLIC_URL + "/images/insulplantHome.png", alt: "InsulPlant image" },
-        { src: process.env.PUBLIC_URL + "/images/firstSteamworks.png", alt: "2200" },
-        { src: process.env.PUBLIC_URL + "/images/carlaRos.png", alt: "2200" },
-        { src: process.env.PUBLIC_URL + "/images/carlaCamera.png", alt: "2200" },
-    ];
-
-
+const defaultItems = [
+  { src: process.env.PUBLIC_URL + "/images/2200Hang.jpg", alt: "2200", caption: "FIRST Stronghold" },
+  { src: process.env.PUBLIC_URL + "/images/vflHome.png", alt: "VFL image", caption: "Home page of VFL..." },
+  { src: process.env.PUBLIC_URL + "/images/insulplantHome.png", alt: "InsulPlant image", caption: "InsulPlant homepage" },
+  { src: process.env.PUBLIC_URL + "/images/firstSteamworks.png", alt: "2200", caption: "FIRST Steamworks" },
+  { src: process.env.PUBLIC_URL + "/images/carlaRos.png", alt: "2200", caption: "Capstone Project - Carla ROS integration" },
+  { src: process.env.PUBLIC_URL + "/images/carlaCamera.png", alt: "2200", caption: "Capstone Project - Carla camera module" },
+];
 
   const normalizedItems = (items && items.length > 0)
   ? items.map(item =>
@@ -33,10 +31,10 @@ export default function Carousel({
         </div>
       ) : item
     )
-  : defaultItems.map(i =>
+    : defaultItems.map(i =>
       <div className="carousel-content" key={i.src}>
         <img src={i.src} alt={i.alt} className="carousel-image" />
-        {/* Add captions to default items if needed */}
+        {i.caption && <div className="carousel-caption">{i.caption}</div>}
       </div>
     );
 
@@ -106,10 +104,7 @@ export default function Carousel({
             <button aria-label="Previous" onClick={prev} className="carousel-arrow left aligned">‹</button>
             <button aria-label="Next" onClick={next} className="carousel-arrow right aligned">›</button>
           </>
-        )}
-      </div>
-
-      {showIndicators && (
+        )} {showIndicators && (
         <div className="carousel-indicators">
           {Array.from({ length: count }).map((_, i) => (
             <button
@@ -122,5 +117,8 @@ export default function Carousel({
         </div>
       )}
     </div>
+      </div>
+
+     
   );
 }

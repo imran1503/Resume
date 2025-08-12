@@ -86,17 +86,19 @@
 
 .carousel-caption {
   text-align: center;
-  color: #660000;
-  background: rgba(0,0,0,0.5);
+  color: #ff0000;
+  background: rgba(0,0,0,0.8);
   padding: 0.5em 1em;
   position: absolute;
   bottom: 10px;
   left: 0;
-  width: 100%;
+  width: 20%;
   font-size: 1em;
+  margin-left: 40%;
 }
 
 .carousel-content {
   position: relative;
   height: 100%;
+
 }
