@@ -15,10 +15,10 @@ function Home(){
             <div className='HeroSection-Home'>
                 <HeroSection/>
             </div>
-            <div className='AboutMeContactSection'>
+          {/*   <div className='AboutMeContactSection'>
                   <AboutMe/>
                 
-            </div>
+            </div> */}
             <div className='CarouselSection'>
                 <Carousel/>
             </div> 

@@ -6,12 +6,16 @@ export default function Carousel({
   autoPlay = true,
   interval = 5000,
   showArrows = false,
-  showIndicators = false,
+  showIndicators = true,
   className = "simple-carousel full-width",
 }) {
     const defaultItems = [
-        { src: process.env.PUBLIC_URL + "/images/MEC_waterfront.png", alt: "MEC image" , caption: "MEC Waterfront"},
-        { src: process.env.PUBLIC_URL + "/images/hexagons.jpeg", alt: "hex image" },
+        { src: process.env.PUBLIC_URL + "/images/2200Hang.jpg", alt: "2200" },
+        { src: process.env.PUBLIC_URL + "/images/vflHome.png", alt: "VFL image" , caption: "Home page of VFL, a full-stack web application that allows users to create and share custom fantasy rosters."},
+        { src: process.env.PUBLIC_URL + "/images/insulplantHome.png", alt: "InsulPlant image" },
+        { src: process.env.PUBLIC_URL + "/images/firstSteamworks.png", alt: "2200" },
+        { src: process.env.PUBLIC_URL + "/images/carlaRos.png", alt: "2200" },
+        { src: process.env.PUBLIC_URL + "/images/carlaCamera.png", alt: "2200" },
     ];
 
 

@@ -2,14 +2,16 @@
 
 .carousel {
   position: relative;
-  max-width: 800px;
+  max-width: 400px;
   margin: auto;
   user-select: none;
+
+  
 }
 
 .carousel-viewport {
   overflow: hidden;
-  
+  background-image: url( "../../public/images/MECTest.jpg");
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -20,13 +22,14 @@
 
 .carousel-slide {
   flex-shrink: 0;
-  height: 500px;
+  height: 750px;
+  
 }
 
 .carousel-image {
-  width: 100%;
+  width:70%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;  margin-left: 15%;
 }
 
 .carousel-arrow {
@@ -60,8 +63,10 @@
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   margin-top: 10px;
+  padding-bottom: 5px;
+  
 }
 
 .carousel-indicator {
@@ -81,7 +86,7 @@
 
 .carousel-caption {
   text-align: center;
-  color: #fff;
+  color: #660000;
   background: rgba(0,0,0,0.5);
   padding: 0.5em 1em;
   position: absolute;
