@@ -23,7 +23,7 @@
 .carousel-slide {
   flex-shrink: 0;
   height: 750px;
-  
+  align-items: center;
 }
 
 .carousel-image {
@@ -32,10 +32,10 @@
   object-fit: cover;  margin-left: 15%;
 }
 
-.carousel-arrow {
+/* .carousel-arrow {
   position: relative;
   top: 50%;
-/*  transform: translateY(-50%); */
+
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 50%;
@@ -58,25 +58,25 @@
 .carousel-arrow.right {
   right: 10px;
     position: absolute;
-}
+} */
 
 .carousel-indicators {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
-  padding-bottom: 5px;
-  
 }
 
+
+
 .carousel-indicator {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background-color: #ccc;
   border-radius: 50%;
-  border: none;
+  border: 0.75px solid  #000000;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 1%;
 }
 
 .carousel-indicator.active {
@@ -86,19 +86,17 @@
 
 .carousel-caption {
   text-align: center;
-  color: #ff0000;
-  background: rgba(0,0,0,0.8);
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
   padding: 0.5em 1em;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 20%;
   font-size: 1em;
-  margin-left: 40%;
+  margin-top: 10px;
+  position: static;
 }
 
 .carousel-content {
   position: relative;
-  height: 100%;
-
+  height: var(--carousel-image-height, 90%);
+  
 }
+

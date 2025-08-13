@@ -10,15 +10,15 @@ export default function Carousel({
   className = "simple-carousel full-width",
 }) {
 const defaultItems = [
-  { src: process.env.PUBLIC_URL + "/images/2200Hang.jpg", alt: "2200", caption: "FIRST Stronghold" },
-  { src: process.env.PUBLIC_URL + "/images/vflHome.png", alt: "VFL image", caption: "Home page of VFL..." },
-  { src: process.env.PUBLIC_URL + "/images/insulplantHome.png", alt: "InsulPlant image", caption: "InsulPlant homepage" },
-  { src: process.env.PUBLIC_URL + "/images/firstSteamworks.png", alt: "2200", caption: "FIRST Steamworks" },
-  { src: process.env.PUBLIC_URL + "/images/carlaRos.png", alt: "2200", caption: "Capstone Project - Carla ROS integration" },
-  { src: process.env.PUBLIC_URL + "/images/carlaCamera.png", alt: "2200", caption: "Capstone Project - Carla camera module" },
+  { src: process.env.PUBLIC_URL + "/images/2200Hang_New.jpeg", alt: "2200", caption: "FIRST Stronghold 2016" },
+  { src: process.env.PUBLIC_URL + "/images/vflHome.png", alt: "VFL image", caption: "Home page of VFL" },
+  { src: process.env.PUBLIC_URL + "/images/insulplantHome.png", alt: "InsulPlant image" },
+  { src: process.env.PUBLIC_URL + "/images/firstSteamworks.png", alt: "2200", caption: "FIRST Steamworks 2017" },
+  { src: process.env.PUBLIC_URL + "/images/carlaRos.png", alt: "2200", caption: "Capstone Project - Autonmous Vehicle Path Planning" },
+  { src: process.env.PUBLIC_URL + "/images/carlaCamera.png", alt: "2200", caption: "Capstone Project - Autonmous Vehicle Path Planning" },
 ];
 
-  const normalizedItems = (items && items.length > 0)
+const normalizedItems = (items && items.length > 0)
   ? items.map(item =>
       typeof item === 'string' || item?.src ? (
         <div className="carousel-content">
