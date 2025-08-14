@@ -7,11 +7,40 @@ function Timeline(){
         <div className='body'>
             <div className='Timeline'>
                 <p><br/><br/><br/></p> {/* Provides spacing above first text box*/}
+                 {/* INSULPLANT -----------------------------------------------------*/}
+                <div className='container right-container first-container'>
+                    <img src={process.env.PUBLIC_URL + '/images/vfl2.png'} alt='In' />
+                    <div className='text-box'>
+                        <h2><i class="fa-solid fa-cloud"></i>&nbsp;VALORANT FANTASY LEAGUE</h2>
+                        <small>March 2025 - January 31 2025</small>
+                        <p>
+                            Contributed to a high-profile open-source project by rapidly resolving critical front-end issues using Docker, React TypeScript, and Tailwind CSS.
+                            Collaborated closely with maintainers to refactor legacy code for modern JavaScript/TypeScript practices, develop reusable UI components,
+                            and implement robust unit and integration tests. 
+                            These changes improved application stability, reduced code duplication, and ensured new features passed stringent CI/CD pipelines without regressions.
+                            <br/><br/>
+                            &emsp;❖ Resolved major UI-breaking bugs within a week, restoring full functionality. <br/>
+                            &emsp;❖ Reduced duplicated code across modules by 35% through reusable component design.<br/>
+                            &emsp;❖ Improved API error handling, eliminating multiple recurring user-facing issues.<br/>
+                            &emsp;❖ Added comprehensive automated tests, preventing regressions in future releases.<br/>
+                            &emsp;❖ Enhanced performance of a large table by implementing efficient pagination, lowering load times by 4+ seconds.<br/>
+
+                        </p>
+                        <span className='rightSpanArrow'></span>
+                        <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} 
+                            MyLink={
+                                "https://www.valorantfantasyleague.net/"
+                            }
+                        >
+                            Valorant Fantasy League Home&nbsp; <i class="fa-solid fa-link"></i>
+                        </Button>
+                    </div>
+                </div>
                 {/* INSULPLANT -----------------------------------------------------*/}
-                <div className='container left-container first-container'>
+                <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/InsulplantSmallLogo.png'} alt='In' />
                     <div className='text-box'>
-                        <h2><i class="fa-solid fa-briefcase"></i>INSULPLANT</h2>
+                        <h2><i class="fa-solid fa-briefcase"></i>&nbsp;INSULPLANT</h2>
                         <small>June 3 2024 - January 31 2025</small>
                         <p>
                             During my time at InsulPlant, I worked independently under the supervision of a senior developer.
@@ -34,7 +63,7 @@ function Timeline(){
                                 "https://insulplant.com/"
                             }
                         >
-                            InsulPlant HomePage! <i class="fa-solid fa-link"></i>
+                            InsulPlant Home&nbsp;<i class="fa-solid fa-link"></i>
                         </Button>
                     </div>
                 </div>
@@ -42,7 +71,7 @@ function Timeline(){
                 <div className='container right-container '>
                     <img src={process.env.PUBLIC_URL + '/images/MECLogo.png'} alt='mec' />
                     <div className='text-box'>
-                        <h2><i class="fa-solid fa-briefcase"></i>THE BEAT REVIVAL PROJECT</h2>
+                        <h2><i class="fa-solid fa-cloud"></i>&nbsp;THE BEAT REVIVAL PROJECT</h2>
                         <small>December 2023 - Present</small>
                         <p>
                             <strong>OPEN SOURCE PROJECT</strong><br/>
@@ -58,7 +87,7 @@ function Timeline(){
                             "https://beatrevival.me/"
                             }
                         >
-                            Information Page Here! <i class="fa-solid fa-link"></i>
+                            Information Page Here!&nbsp; <i class="fa-solid fa-link"></i>
                         </Button>
                     </div>
                 </div>
@@ -67,7 +96,7 @@ function Timeline(){
                 <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/GameJamLogo.png'} alt='mec' />
                     <div className='text-box'>
-                        <h2><i class="fa-solid fa-briefcase"></i>DECRYPTION </h2>
+                        <h2><i class="fa-solid fa-briefcase"></i>&nbsp;DECRYPTION </h2>
                         <small>January 2024 - Febuary 2024</small>
                         <p>
                             <strong>OPEN SOURCE GAME JAM</strong><br/>
@@ -81,7 +110,7 @@ function Timeline(){
                             "https://artemis1503.itch.io/decryption"
                             }
                         >
-                            Link to Game Page! <i class="fa-solid fa-link"></i>
+                            Link to Game Page!&nbsp; <i class="fa-solid fa-link"></i>
                         </Button>
                     </div>
                 </div>
@@ -90,7 +119,7 @@ function Timeline(){
                 <div className='container right-container'>
                     <img src={process.env.PUBLIC_URL + '/images/CarletonLogo.jpg'} alt='mec' />
                     <div className='text-box undergraduateProject'>
-                        <h2><i class="fa-solid fa-graduation-cap"></i>CARLETON UNIVERSITY </h2>
+                        <h2><i class="fa-solid fa-graduation-cap"></i>&nbsp;CARLETON UNIVERSITY </h2>
                         <small>September 2022 - April 2023</small>
                         <p>
                             <strong>UNDERGRADUATE PROJECT: Yellow means go Faster!</strong><br/>
@@ -112,13 +141,13 @@ function Timeline(){
                             "https://github.com/imran1503/IntersectionControl"
                             }
                         >
-                            Link To Github Repo <i class="fa-solid fa-link"></i>
+                            Link To Github Repo&nbsp; <i class="fa-solid fa-link"></i>
                         </Button>
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={
                             "https://docs.google.com/document/d/1djqvHnNwfuqXeH-11RAcCkqxSg5SVFWxBtAyhrOvDdo/edit?usp=sharing"
                             }
                         >
-                            Link To Final Report <i class="fa-solid fa-link"></i>
+                            Link To Final Report &nbsp;<i class="fa-solid fa-link"></i>
                         </Button>
                     </div>
                 </div>
@@ -127,7 +156,7 @@ function Timeline(){
                 <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/TTLogo.png'} alt='mec' />
                     <div className='text-box'>
-                        <h2><i class="fa-solid fa-briefcase"></i>TIPTOP TAILORS </h2>
+                        <h2><i class="fa-solid fa-briefcase"></i>&nbsp;TIPTOP TAILORS </h2>
                         <small>November 2021 - January 2023</small>
                         <p>
                         Served customers in a bustling retail environment by providing attentive assistance and facilitating sales transactions, resulting in increased customer satisfaction and sales revenue.
@@ -146,7 +175,7 @@ function Timeline(){
 
                     <div className='text-box'>
 
-                        <h2><i class="fa-solid fa-briefcase"></i>LAURIER OPTICAL</h2>
+                        <h2><i class="fa-solid fa-briefcase"></i>&nbsp;LAURIER OPTICAL</h2>
                         <small>August 2022 - October 2022</small>
                         <p>
                         Worked with the optometrist to admit patients to them after performing precursory checks, and then sell them a pair of prescription glasses after their appointment.<br/><br/>
@@ -165,7 +194,7 @@ function Timeline(){
                 <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/CarletonLogo.jpg'} alt='mec' />
                     <div className='text-box'>
-                        <h2><i class="fa-solid fa-graduation-cap"></i>CARLETON UNIVERSITY </h2>
+                        <h2><i class="fa-solid fa-graduation-cap"></i>&nbsp;CARLETON UNIVERSITY </h2>
                         <small>January 2022 - April 2022</small>
                         <p>
                             <strong>SCHOOL PROJECT: Mini Monkey Survey</strong><br/>
@@ -180,7 +209,7 @@ function Timeline(){
                             "https://github.com/EveningStarlight/SYSC_4806_Project"
                             }
                         >
-                            Link To Github Repo<i class="fa-solid fa-link"></i>
+                            Link To Github Repo&nbsp;<i class="fa-solid fa-link"></i>
                         </Button>
                     </div>
                 </div>
@@ -189,7 +218,7 @@ function Timeline(){
                 <div className='container right-container'>
                     <img src={process.env.PUBLIC_URL + '/images/CarletonLogo.jpg'} alt='mec' />
                     <div className='text-box'>
-                        <h2><i class="fa-solid fa-graduation-cap"></i>CARLETON UNIVERSITY </h2>
+                        <h2><i class="fa-solid fa-graduation-cap"></i>&nbsp;CARLETON UNIVERSITY </h2>
                         <small>January 2021 - April 2021</small>
                         <p>
                             <strong>SCHOOL PROJECT: Real Time Elevator</strong><br/>
@@ -204,7 +233,7 @@ function Timeline(){
                             "https://github.com/imran1503/SYSC-3303-Elevator-Simulator"
                             }
                         >
-                             Click for Github Repo! <i class="fa-solid fa-link"></i>
+                             Click for Github Repo!&nbsp; <i class="fa-solid fa-link"></i>
                         </Button>
                     </div>
                 </div>
@@ -213,7 +242,7 @@ function Timeline(){
                 <div className='container left-container'>
                     <img src={process.env.PUBLIC_URL + '/images/MMRLogo.png'} alt='mec' />
                     <div className='text-box'>
-                        <h2><i class="fa-solid fa-graduation-cap"></i>NASA FIRST ROBOTICS / MM ROBINSON HIGH SCHOOL </h2>
+                        <h2><i class="fa-solid fa-graduation-cap"></i>&nbsp;NASA FIRST ROBOTICS / MM ROBINSON HIGH SCHOOL </h2>
                         <small>2013 - 2017</small>
                         <p>
                             <strong>SCHOOL COURSE: FIRST Robotics Team 2200</strong><br/>
@@ -230,7 +259,7 @@ function Timeline(){
                         <span className='leftSpanArrow'></span>
                         <Button className='hero-btns' buttonStyle={"btn--primary"} buttonSize={'btn--large'} MyLink={"https://mmrambotics.com/seasons/"}
                         >
-                             Click for more info! <i class="fa-solid fa-link"></i>
+                             Click for more info! &nbsp;<i class="fa-solid fa-link"></i>
                         </Button>
                     </div>
                 </div>
