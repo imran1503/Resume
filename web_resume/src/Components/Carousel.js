@@ -88,6 +88,9 @@ const normalizedItems = (items && items.length > 0)
   return (
     <div ref={containerRef} className={`${className}`}>
       <div className="carousel-viewport">
+        <section className="projects-section">
+          <div className="carousel-title">Projects & Highlights</div>
+        </section>
         <div
           className="carousel-track"
           style={{ width: `${count * 100}%`, transform: `translateX(-${index * (100 / count)}%)` }}

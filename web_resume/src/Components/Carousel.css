@@ -4,9 +4,31 @@
   position: relative;
   max-width: 400px;
   margin: auto;
-  user-select: none;
+  user-select: none; 
+}
 
-  
+
+
+
+.carousel-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff; /* matches your nav theme */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  margin-left: 40%;
+}
+
+.carousel-title::after {
+  content: "";
+  display: block;
+  margin: 0.5rem auto 0;
+  width: 80px;
+  height: 3px;
+  background: #194569; /* accent underline */
+  border-radius: 2px;
 }
 
 .carousel-viewport {
