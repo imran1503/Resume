@@ -1,14 +1,13 @@
 :root {
   --primary: #ffffff; /* COLOUR OF BOXES */
   --BGC: #194569;
-  /* --BGI: url('../../public/images/expBGTest.jpg') */
-  --BGI: url('../../public/images/stairs3.4.3.png');
+  
 }
 
 body {
   margin: 0;
 
-  background-image: var(--BGI);
+  background-image: url('../../public/images/stairs3.4.3.png');
 
   background-repeat:  repeat-y;   /* Repeat only vertically */
   background-size: 100%; /* Ensure the background covers the full width */

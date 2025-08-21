@@ -7,13 +7,15 @@ function Timeline(){
         <div className='body'>
             <div className='Timeline'>
                 <p><br/><br/><br/></p> {/* Provides spacing above first text box*/}
-                 {/* INSULPLANT -----------------------------------------------------*/}
+                {/* VALORANT FANTASY LEAGUE -----------------------------------------------------*/}
                 <div className='container right-container first-container'>
                     <img src={process.env.PUBLIC_URL + '/images/vfl2.png'} alt='In' />
                     <div className='text-box'>
                         <h2><i class="fa-solid fa-cloud"></i>&nbsp;VALORANT FANTASY LEAGUE</h2>
-                        <small>March 2025 - January 31 2025</small>
+                        <small>March 2025 - Present</small>
                         <p>
+                            I joined onto the team after the initial design for the application was completed and started to be built.
+                            From there I worked on larger indpendent tasks, such as designing the leaderboard page and more. 
                             Contributed to a high-profile open-source project by rapidly resolving critical front-end issues using Docker, React TypeScript, and Tailwind CSS.
                             Collaborated closely with maintainers to refactor legacy code for modern JavaScript/TypeScript practices, develop reusable UI components,
                             and implement robust unit and integration tests. 
@@ -23,7 +25,7 @@ function Timeline(){
                             &emsp;❖ Reduced duplicated code across modules by 35% through reusable component design.<br/>
                             &emsp;❖ Improved API error handling, eliminating multiple recurring user-facing issues.<br/>
                             &emsp;❖ Added comprehensive automated tests, preventing regressions in future releases.<br/>
-                            &emsp;❖ Enhanced performance of a large table by implementing efficient pagination, lowering load times by 4+ seconds.<br/>
+         
 
                         </p>
                         <span className='rightSpanArrow'></span>
