@@ -19,7 +19,7 @@ function HeroSection(){
                 </h3>
 
                 <Button className='hero-btns' buttonStyle={"btn--outline"} buttonSize={'btn--medium'} MyLink={
-                    "https://drive.google.com/file/d/1xBjR5Rj0ACpv5PMn8YAdzZueHkwq9Bmk/view?usp=sharing"
+                    "https://drive.google.com/file/d/1ol8hlbruzlk8-SNPun4k20ZTWM3xE34m/view?usp=sharing"
                     }
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
