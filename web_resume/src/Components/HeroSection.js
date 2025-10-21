@@ -17,7 +17,7 @@ function HeroSection(){
                 <h3 className='subheadline'>   Welcome to my portfolio site </h3>
                 
                 <Button className='hero-btns' buttonStyle={"btn--outline"} buttonSize={'btn--medium'} MyLink={
-                    "https://drive.google.com/file/d/1ol8hlbruzlk8-SNPun4k20ZTWM3xE34m/view?usp=sharing"
+                    "https://drive.google.com/file/d/1vO3p3PZfHaGAeXfI8Syg4Mcw7mXZJYD-/view?usp=drive_link"
                     }
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
