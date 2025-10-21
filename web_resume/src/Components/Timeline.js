@@ -48,7 +48,7 @@ function Timeline(){
                             During my time at InsulPlant, I worked independently under the supervision of a senior developer.
                             I assisted the senior developer debug and research solutions to complex issues. 
                             My primary objective throughout my contract was to create a complete test suite for the existing code base.
-                            After completing testing for the backend logic I moved to discovering and refactoring unefficent code segments.
+                            After completing testing for the backend logic I moved to discovering and refactoring inefficent code segments.
                             For example, I spent time refactoring the code to increase the readability and maintainability of the code in future. 
                             <br/><br/>
                             &emsp;❖ Increased the percentage of the codebase tested and documeted from 5% to 90%. <br/>

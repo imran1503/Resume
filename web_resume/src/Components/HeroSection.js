@@ -8,16 +8,14 @@ import { Button } from '../Components/Button.js';
 function HeroSection(){
     return(
         <div className='hero-container'>
-            {/* if you want a video: <video src='' autoPlay loop muted/> */}
             <div className="banner-text">
                 <h1 className='headline'>Hi, </h1>
                   <h1 className='headline'> I'm Imran </h1> 
                 <h3 className='subheadline'>
-                    Excited full stack developer in the making!  </h3>
-                    
-                 <h3 className='subheadline'>   Welcome to my portfolio site 
+                    Excited full stack developer in the making! 
                 </h3>
-
+                <h3 className='subheadline'>   Welcome to my portfolio site </h3>
+                
                 <Button className='hero-btns' buttonStyle={"btn--outline"} buttonSize={'btn--medium'} MyLink={
                     "https://drive.google.com/file/d/1ol8hlbruzlk8-SNPun4k20ZTWM3xE34m/view?usp=sharing"
                     }
