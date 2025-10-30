@@ -10,13 +10,13 @@
 //   );
 // }
 
-import React from 'react';
-import './Button.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./Button.css";
+import { Link } from "react-router-dom";
 
-const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
+const STYLES = ["btn--primary", "btn--outline", "btn--test"];
 
-const SIZES = ['btn--small', 'btn--medium', 'btn--large'];
+const SIZES = ["btn--small", "btn--medium", "btn--large"];
 
 export const Button = ({
   children,
@@ -24,7 +24,7 @@ export const Button = ({
   onClick,
   buttonStyle,
   buttonSize,
-  MyLink
+  MyLink,
 }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
@@ -33,7 +33,7 @@ export const Button = ({
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
   return (
-    <Link to={MyLink} className='btn-mobile'>
+    <Link to={MyLink} className="btn-mobile">
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}

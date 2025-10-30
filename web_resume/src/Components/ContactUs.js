@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./ContactUs.css";
-import { Button } from './Button';
+import { Button } from "./Button";
 // npm i @emailjs/browser
 
 const ContactForm = () => {
@@ -15,7 +15,7 @@ const ContactForm = () => {
         "service_Artemis1503",
         "template_6hvtecr",
         form.current,
-        "EgQfKi4cyt4Ggsm-d"
+        "EgQfKi4cyt4Ggsm-d",
       )
       .then(
         (result) => {
@@ -24,19 +24,14 @@ const ContactForm = () => {
         },
         (error) => {
           console.log(error.text);
-        }
+        },
       );
   };
 
   return (
     <>
       <div className="header">
-
-
-        <h3 className='subheadlineContact'>
-          Contact Me
-        </h3>
-        
+        <h3 className="subheadlineContact">Contact Me</h3>
       </div>
       <div className="ContactMeForm">
         <form ref={form} onSubmit={sendEmail}>

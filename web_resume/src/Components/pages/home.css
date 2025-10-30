@@ -1,11 +1,11 @@
 .home {
-    overflow-x: hidden; /* Hide scrollbars */
-}   
-.aboutMeContactSection{
-    background-image: url(../../../public/images/laptop_BG_full.jpg) ;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+  overflow-x: hidden; /* Hide scrollbars */
 }
-.CarouselSection{
-    overflow-x: hidden;
+.aboutMeContactSection {
+  background-image: url(../../../public/images/laptop_BG_full.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.CarouselSection {
+  overflow-x: hidden;
 }

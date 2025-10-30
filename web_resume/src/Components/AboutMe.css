@@ -1,5 +1,5 @@
-.aboutMe{
-    overflow-y: hidden;
+.aboutMe {
+  overflow-y: hidden;
 }
 
 @media all and (max-width: 1920px) and (min-width: 700px) {
@@ -7,67 +7,56 @@
     flex-direction: column;
     -ms-flex-align: center;
     margin: 0 20%;
-    
   }
-  .flex-container >.AboutMeText {
-  
+  .flex-container > .AboutMeText {
     /*color:  rgb(7, 31, 3);*/
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-size: 18px;
     margin-right: 7%;
     padding-bottom: 5px;
     backdrop-filter: blur(10px);
-    background-color: rgba(0,0,0,0.5);
-    padding: 0.5em; 
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5em;
   }
-  
+
   .flex-container > .profileImage {
     height: 275px;
-    width:  275px; 
-    display:block;
+    width: 275px;
+    display: block;
     margin: auto; /* DOESN'T CENTER WITHOUT DISPLAY:BLOCK FOR SOME REASON*/
     padding-bottom: 15px;
   }
 }
-@media all and (max-width: 600px)  {
+@media all and (max-width: 600px) {
   .flex-container {
     flex-direction: column;
     -ms-flex-align: center;
     margin: 0 auto;
-    
   }
-  .flex-container >.AboutMeText  {
-  
-   
-    color:rgb(255, 255, 255);
+  .flex-container > .AboutMeText {
+    color: rgb(255, 255, 255);
     font-size: 24px;
-    
+
     padding-bottom: 20px;
     margin: 0 10%;
     backdrop-filter: blur(10px);
-    background-color: rgba(0,0,0,0.5);
-    padding: 0.5em; 
-   
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5em;
   }
-  
+
   .flex-container > .profileImage {
     height: 275px;
-    width:  275px; 
-    display:block;
+    width: 275px;
+    display: block;
     margin: auto; /* DOESN'T CENTER WITHOUT DISPLAY:BLOCK FOR SOME REASON*/
     padding-bottom: 15px;
   }
-  
 }
-
 
 .separator {
   height: 3px;
   /*background-color: rgb(25, 102, 9);*/
-   background-color: black;
+  background-color: black;
   border: none;
   width: 100%;
-
 }
-
-
