@@ -26,18 +26,28 @@ export default function Carousel({
     },
     {
       src: process.env.PUBLIC_URL + "/images/firstSteamworks.png",
-      alt: "2200",
+      alt: "firstSteamworks",
       caption: "FIRST Steamworks 2017",
     },
     {
       src: process.env.PUBLIC_URL + "/images/carlaRos.png",
-      alt: "2200",
+      alt: "carlaRos",
       caption: "Capstone Project - Autonmous Vehicle Path Planning",
     },
     {
       src: process.env.PUBLIC_URL + "/images/carlaCamera.png",
-      alt: "2200",
+      alt: "carlaCamera",
       caption: "Capstone Project - Autonmous Vehicle Path Planning",
+    },
+    {
+      src: process.env.PUBLIC_URL + "/images/BRIntro.png",
+      alt: "MEC Intro",
+      caption: "The Beat Revival Project",
+    },
+    {
+      src: process.env.PUBLIC_URL + "/images/playerugc.png",
+      alt: "Player UGC",
+      caption: "User generated time trials and more",
     },
   ];
 
