@@ -156,21 +156,18 @@ export default function Carousel({
             </button>
           </>
         )}{" "}
-        {showIndicators && (
-          <div className="carousel-indicators flex justify-center mt-6 space-x-2">
-            {Array.from({ length: count }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  i === index
-                    ? "bg-white scale-150"
-                    : "bg-gray-500 opacity-70 hover:opacity-100"
-                }`}
-              ></button>
-            ))}
-          </div>
-        )}
+{showIndicators && (
+  <div className="carousel-indicators">
+    {Array.from({ length: count }).map((_, i) => (
+      <button
+        key={i}
+        onClick={() => goTo(i)}
+        className={`carousel-indicator ${i === index ? 'active' : ''}`}
+        aria-label={`Go to slide ${i + 1}`}
+      ></button>
+    ))}
+  </div>
+)}
       </div>
     </div>
   );
