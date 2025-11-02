@@ -57,7 +57,7 @@ export default function Carousel({
             </div>
           ) : (
             item
-          ),
+          )
         )
       : defaultItems.map((i) => (
           <div className="carousel-content" key={i.src}>
@@ -96,7 +96,7 @@ export default function Carousel({
       clearInterval(intervalRef.current);
       intervalRef.current = setInterval(
         () => setIndex((i) => (i + 1) % count),
-        interval,
+        interval
       );
     };
     el.addEventListener("mouseenter", onEnter);
@@ -145,7 +145,7 @@ export default function Carousel({
               onClick={prev}
               className="carousel-arrow left aligned"
             >
-             <i class="fa-solid fa-angle-left"></i>
+              <i class="fa-solid fa-angle-left"></i>
             </button>
             <button
               aria-label="Next"
@@ -156,18 +156,18 @@ export default function Carousel({
             </button>
           </>
         )}{" "}
-{showIndicators && (
-  <div className="carousel-indicators">
-    {Array.from({ length: count }).map((_, i) => (
-      <button
-        key={i}
-        onClick={() => goTo(i)}
-        className={`carousel-indicator ${i === index ? 'active' : ''}`}
-        aria-label={`Go to slide ${i + 1}`}
-      ></button>
-    ))}
-  </div>
-)}
+        {showIndicators && (
+          <div className="carousel-indicators">
+            {Array.from({ length: count }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`carousel-indicator ${i === index ? "active" : ""}`}
+                aria-label={`Go to slide ${i + 1}`}
+              ></button>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

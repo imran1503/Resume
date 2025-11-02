@@ -22,17 +22,18 @@ function Timeline() {
             <small>March 2025 - Present</small>
             <p>
               I joined onto the team after the initial design for the
-              application was completed and started to be built. From there I
+              application was completed as a full stack developer. From there I
               worked on larger indpendent tasks, such as designing the
-              leaderboard page and more. Contributed to a high-profile
+              leaderboard page and more. I contributed to a high-profile
               open-source project by rapidly resolving critical front-end issues
-              using Docker, React TypeScript, and Tailwind CSS. Collaborated
-              closely with maintainers to refactor legacy code for modern
-              JavaScript/TypeScript practices, develop reusable UI components,
-              and implement robust unit and integration tests. These changes
-              improved application stability, reduced code duplication, and
-              ensured new features passed stringent CI/CD pipelines without
-              regressions.
+              using Docker, C, SQL, React, TypeScript, and Tailwind CSS.
+              Collaborated closely with maintainers to refactor legacy code for
+              modern JavaScript/TypeScript practices, develop reusable UI
+              components, and implement robust unit and integration tests. These
+              changes improved application stability, reduced code duplication,
+              and ensured new features passed stringent CI/CD pipelines without
+              regressions. I have added onto and refined our API calls to the
+              backend, allowing for a more seamless user experience.
               <br />
               <br />
               &emsp;❖ Resolved major UI-breaking bugs within a week, restoring
