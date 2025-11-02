@@ -7,7 +7,7 @@ export default function Carousel({
   interval = 5000,
   showArrows = true,
   showIndicators = true,
-  className = "simple-carousel full-width",
+  className = "simple-carousel full-width height-50%",
 }) {
   const defaultItems = [
     {
@@ -145,14 +145,14 @@ export default function Carousel({
               onClick={prev}
               className="carousel-arrow left aligned"
             >
-              ‹
+             <i class="fa-solid fa-angle-left"></i>
             </button>
             <button
               aria-label="Next"
               onClick={next}
               className="carousel-arrow right aligned"
             >
-              ›
+              <i class="fa-solid fa-angle-right"></i>
             </button>
           </>
         )}{" "}
@@ -164,7 +164,7 @@ export default function Carousel({
                 onClick={() => goTo(i)}
                 className={`w-3 h-3 rounded-full transition-all ${
                   i === index
-                    ? "bg-white scale-110"
+                    ? "bg-white scale-150"
                     : "bg-gray-500 opacity-70 hover:opacity-100"
                 }`}
               ></button>
