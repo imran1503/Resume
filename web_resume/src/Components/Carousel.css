@@ -19,7 +19,7 @@
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
   text-align: center;
   width: 100%;
-  z-index: 5;
+  
   padding: 1rem 0 0.5rem 0; /* More padding */
   margin: 0;
   letter-spacing: 1px;
@@ -95,8 +95,9 @@
 }
 
 .carousel-image:hover {
-  transform: scale(1.03);
+  transform: scale(1.4);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  z-index: 5;
 }
 
 /* IMPROVED CAPTION WITH BETTER PADDING */
