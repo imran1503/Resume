@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
 import "./Carousel.css"; // External CSS file
+import React, { useEffect, useRef, useState } from "react";
+
 
 export default function Carousel({
   items = null,
