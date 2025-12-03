@@ -8,6 +8,15 @@ import { Button } from "../Components/Button.js";
 function HeroSection() {
   return (
     <div className="hero-container">
+
+      <div className="hero-image-wrapper">
+        <img
+          src={process.env.PUBLIC_URL + "/images/ILPhoto2.jpg"}
+          alt="Imran Latif"
+          className="hero-image"
+        />
+      </div>
+
       <div className="banner-text">
         <h1 className="headline">Hi, </h1>
         <h1 className="headline"> I'm Imran </h1>
