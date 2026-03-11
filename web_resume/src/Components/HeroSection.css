@@ -30,10 +30,12 @@
   border-radius: 50%;
   object-fit: cover;
   border: 9px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 
+  box-shadow:
     0 10px 45px rgba(93, 204, 108, 0.45),
     0 0 30px rgba(255, 255, 255, 0.3);
-  transition: transform 2.5s ease, box-shadow 0.4s ease;
+  transition:
+    transform 2.5s ease,
+    box-shadow 0.4s ease;
   margin-right: 25px;
 }
 
@@ -61,7 +63,7 @@
   font-style: normal;
   margin-bottom: 20px;
   text-align: left;
-  margin-left: -95px;
+  margin-left: 0px;
 }
 
 .hero-btns {
@@ -74,16 +76,16 @@
     flex-direction: row;
     gap: 40px;
   }
-  
+
   .hero-image {
     width: 280px;
     height: 280px;
   }
-  
+
   .headline {
     font-size: 70px;
   }
-  
+
   .subheadline {
     font-size: 26px;
   }
@@ -95,22 +97,22 @@
     gap: 40px;
     text-align: center;
   }
-  
+
   .hero-image {
     width: 250px;
     height: 250px;
   }
-  
+
   .banner-text {
     align-items: center;
     text-align: center;
   }
-  
+
   .headline {
     font-size: 50px;
     text-align: center;
   }
-  
+
   .subheadline {
     font-size: 22px;
     text-align: center;
