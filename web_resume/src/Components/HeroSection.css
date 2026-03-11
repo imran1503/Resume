@@ -63,7 +63,7 @@
   font-style: normal;
   margin-bottom: 20px;
   text-align: left;
-  margin-left: 0px;
+  margin-left: -95px;
 }
 
 .hero-btns {
@@ -116,5 +116,6 @@
   .subheadline {
     font-size: 22px;
     text-align: center;
+    margin-left: 0;
   }
 }
