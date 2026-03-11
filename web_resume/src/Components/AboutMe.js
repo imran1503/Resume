@@ -5,7 +5,7 @@ function aboutMe() {
   return (
     <div className="aboutMe">
       <div>
-        <hr class="separator" />
+        <hr className="separator" />
       </div>
       <div className="flex-container">
         <div></div>
