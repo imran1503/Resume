@@ -32,7 +32,7 @@ function HeroSection() {
             buttonStyle={"btn--outline"}
             buttonSize={"btn--medium"}
             MyLink={
-              "https://drive.google.com/file/d/1sWlXdrvBUVDPcyf0Qi2p62zc2XBrw0oM/view?usp=sharing"
+              "https://drive.google.com/file/d/1L6g13C5EciHHjqDvniMMBX2fqdevYbSB/view?usp=sharing"
             }
           >
             <svg
