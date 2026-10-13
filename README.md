@@ -8,7 +8,7 @@
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![License](https://img.shields.io/badge/License-Personal-lightgrey?style=for-the-badge)](#-license)
 
-> This is the **second iteration** of my portfolio — a passion project that fulfilled my creative need while deepening my familiarity with React and modern web technologies.
+> This is my portfolio — a passion project that fulfilled my creative needs.
 
 </div>
 
