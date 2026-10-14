@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.91b9dd53.css",
-    "main.js": "/static/js/main.e55fb7d8.js",
+    "main.css": "/static/css/main.81d4e250.css",
+    "main.js": "/static/js/main.2bcc6540.js",
     "static/js/453.31bd05b5.chunk.js": "/static/js/453.31bd05b5.chunk.js",
     "static/media/stairs3.4.3.png": "/static/media/stairs3.4.3.bc2ebdf3518bdcb84285.png",
     "static/media/MECTest.jpg": "/static/media/MECTest.b7fb5718afa9870c0c93.jpg",
-    "static/media/laptop_BG_full.jpg": "/static/media/laptop_BG_full.be7ad40f966947490a6a.jpg",
+    "static/media/good-times.otf": "/static/media/good-times.8202739dbe42aaa5d2ea.otf",
     "index.html": "/index.html",
-    "main.91b9dd53.css.map": "/static/css/main.91b9dd53.css.map",
-    "main.e55fb7d8.js.map": "/static/js/main.e55fb7d8.js.map",
+    "main.81d4e250.css.map": "/static/css/main.81d4e250.css.map",
+    "main.2bcc6540.js.map": "/static/js/main.2bcc6540.js.map",
     "453.31bd05b5.chunk.js.map": "/static/js/453.31bd05b5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91b9dd53.css",
-    "static/js/main.e55fb7d8.js"
+    "static/css/main.81d4e250.css",
+    "static/js/main.2bcc6540.js"
   ]
 }
