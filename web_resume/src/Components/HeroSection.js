@@ -1,66 +1,83 @@
 import React from "react";
-import "./Button.css";
-import "./HeroSection.css";
-import "../App.css";
 import { Link } from "react-router-dom";
-import { Button } from "../Components/Button.js";
+import "./HeroSection.css";
 
-function HeroSection() {
+function HeroSection({ isNight = false }) {
+  const nowItems = [
+    "leading Valorant fantasy league",
+    "preparing for Security+ 701",
+    "shipping Beat Revival",
+    "studying Google Cybersecurity",
+  ];
+
   return (
-    <div className="hero-container">
-      <div className="hero-content">
-        <div className="hero-image-wrapper">
+    <section className={`hero${isNight ? " hero--night" : ""}`}>
+      <div className="hero-ticker" aria-hidden="true">
+        <div className="hero-ticker-track">
+          {[...nowItems, ...nowItems, ...nowItems].map((item, i) => (
+            <span key={i} className="hero-ticker-item">
+              <span className="ticker-label">NOW</span>
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="hero-inner">
+        <div className="hero-photo">
           <img
             src={process.env.PUBLIC_URL + "/images/ILPhoto2.jpg"}
             alt="Imran Latif"
-            className="hero-image"
           />
         </div>
 
-        <div className="banner-text">
-          <h1 className="headline">Hi, </h1>
-          <h1 className="headline"> I'm Imran </h1>
+        <div className="hero-content">
+          <p className="hero-eyebrow">FULL-STACK DEVELOPER</p>
 
-          <h3 className="subheadline">
-            Excited full stack developer in the making!
-          </h3>
+          <h1 className="hero-headline">
+            Hi, I'm Imran.
+            <br />I build <span className="accent">web apps</span> that
+            <br />
+            ship and scale.
+          </h1>
 
-          <h3 className="subheadline">Welcome to my portfolio site</h3>
+          <p className="hero-lede">
+            I build full-stack web apps with a passion for robotics and
+            simulation. Recent work spans React and Node on the front end,
+            Python and ROS for autonomous systems, and game tooling for
+            user-generated content.
+          </p>
 
-          <Button
-            className="hero-btns"
-            buttonStyle={"btn--outline"}
-            buttonSize={"btn--medium"}
-            MyLink={
-              "https://drive.google.com/file/d/1L6g13C5EciHHjqDvniMMBX2fqdevYbSB/view?usp=sharing"
-            }
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              style={{
-                width: "1.2rem",
-                height: "1.2rem",
-                marginRight: "8px",
-                verticalAlign: "middle",
-              }}
+          <div className="hero-actions">
+            <Link to="/experience" className="btn btn--primary">
+              View work
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--ghost"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 16.5V18a2.25 2.25 0 002.25 2.25h13.5A2.25
-                        2.25 0 0021 18v-1.5M7.5 12l4.5 4.5m0 0l4.5-4.5m-4.5
-                        4.5V3"
-              />
-            </svg>
-            Download my Resume!
-          </Button>
+              Download resume
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" />
+              </svg>
+            </a>
+          </div>
+
+          <div className="hero-status">
+            <span>
+              <i className="dot" /> Open to work
+            </span>
+            <span>Based in Ontario, Canada</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
