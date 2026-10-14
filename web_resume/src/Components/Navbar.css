@@ -1,5 +1,23 @@
+/* =========================================================
+   MIRROR'S EDGE CATALYST — NAVBAR
+   Runner Vision red accent, flat surfaces, sharp corners
+   ========================================================= */
+
+:root {
+  --nav-accent: #e4002b; /* Mirror's Edge Catalyst red */
+  --nav-accent-glow: rgba(228, 0, 43, 0.55); /* Runner Vision highlight glow */
+  --nav-ink: #0d0d0d; /* near-black MEC surface */
+  --nav-bg: #1a1a1a; /* navbar base */
+  --nav-line: #2a2a2a; /* hairline separators */
+}
+
+/* =========================================================
+   NAVBAR SHELL
+   ========================================================= */
+
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: var(--nav-ink);
+  border-bottom: 2px solid var(--nav-accent); /* single red line under the bar */
   height: 80px;
   display: flex;
   justify-content: center;
@@ -16,6 +34,7 @@
   align-items: center;
   height: 80px;
   max-width: 1500px;
+  width: 100%;
 }
 
 .navbar-logo {
@@ -25,23 +44,28 @@
   cursor: pointer;
   text-decoration: none;
   font-family: "Good Times", sans-serif;
-  font-size: 2rem;
+  font-size: 1.9rem;
   display: flex;
   align-items: center;
+  letter-spacing: 0.05em;
+  transition:
+    color 0.2s ease-out,
+    text-shadow 0.2s ease-out;
 }
 
-.fa-typo3 {
-  margin-left: 0.2rem;
-  font-size: 1.8rem;
+.navbar-logo:hover {
+  color: var(--nav-accent);
+  text-shadow: 0 0 10px var(--nav-accent-glow);
 }
+
+/* =========================================================
+   NAV MENU
+   ========================================================= */
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(
-    6,
-    auto
-  ); /* NUMBER OF ICONS THE NAV BAR CA HOLD IN ONE LINE ON THE LEFT SIDE */
-  grid-gap: 10px;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 2.5rem;
   list-style: none;
   text-align: center;
   width: 65vw;
@@ -51,6 +75,9 @@
 
 .nav-item {
   height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links {
@@ -58,40 +85,87 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   height: 100%;
+  border-bottom: 4px solid transparent; /* reserved → no shift on hover */
+  box-sizing: border-box;
+  transition:
+    color 0.2s ease-out,
+    border-color 0.2s ease-out,
+    text-shadow 0.2s ease-out;
 }
 
-.nav-links:hover {
-  border-bottom: 4px solid #136b1a;
-  transition: all 0.2s ease-out;
+.nav-links:hover,
+.nav-links:focus-visible {
+  color: var(--nav-accent);
+  border-bottom-color: var(--nav-accent);
+  text-shadow: 0 0 8px var(--nav-accent-glow);
+  outline: none;
 }
+
+/* =========================================================
+   THEME TOGGLE (sun / moon)
+   ========================================================= */
+
+.nav-theme-toggle {
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid transparent; /* reserved → no shift on hover */
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 1.5rem; /* fixed width → sun↔moon swap never shifts the row */
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition:
+    color 0.2s ease-out,
+    border-color 0.2s ease-out,
+    text-shadow 0.2s ease-out;
+}
+
+.nav-theme-toggle:hover,
+.nav-theme-toggle:focus-visible {
+  color: var(--nav-accent);
+  border-bottom-color: var(--nav-accent);
+  text-shadow: 0 0 8px var(--nav-accent-glow);
+  outline: none;
+}
+
+.nav-theme-toggle svg,
+.nav-theme-toggle i {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* =========================================================
+   MOBILE MENU ICON
+   ========================================================= */
 
 .fa-bars {
   color: #fff;
+}
+
+.fa-times {
+  color: #fff;
+  font-size: 2rem;
 }
 
 .menu-icon {
   display: none;
 }
 
-.nav-theme-toggle {
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1;
-  padding: 0;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s;
-}
-
-.nav-theme-toggle:hover {
-  color: #e4002b;
-}
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
 
 @media screen and (max-width: 960px) {
   .NavbarItems {
@@ -109,15 +183,22 @@
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    margin-right: 0;
+    grid-gap: 0;
   }
 
   .nav-menu.active {
     position: relative;
-    background: #242222;
+    background: var(--nav-bg);
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+  }
+
+  .nav-item {
+    height: auto;
+    width: 100%;
   }
 
   .nav-links {
@@ -125,12 +206,16 @@
     padding: 2rem;
     width: 100%;
     display: table;
+    border-bottom: none; /* underline is desktop-only */
+    height: auto;
   }
 
-  .nav-links:hover {
-    background-color: #136b1a;
-    color: #242424;
+  .nav-links:hover,
+  .nav-links:focus-visible {
+    background-color: var(--nav-accent);
+    color: #fff; /* white on red — sharp, MEC-flat */
     border-radius: 0;
+    text-shadow: none;
   }
 
   .navbar-logo {
@@ -138,6 +223,7 @@
     top: 0;
     left: 0;
     transform: translate(25%, 50%);
+    margin-left: 0;
   }
 
   .menu-icon {
@@ -150,9 +236,20 @@
     cursor: pointer;
   }
 
-  .fa-times {
+  .nav-theme-toggle {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-bottom: none;
+    display: flex;
+  }
+
+  .nav-theme-toggle:hover,
+  .nav-theme-toggle:focus-visible {
+    background-color: var(--nav-accent);
     color: #fff;
-    font-size: 2rem;
+    border-radius: 0;
+    text-shadow: none;
   }
 
   .nav-links-mobile {
@@ -173,51 +270,7 @@
 
   .nav-links-mobile:hover {
     background: #fff;
-    color: #242424;
+    color: var(--nav-ink);
     transition: 250ms;
   }
-}
-
-/* =========================================================
-   NORMALIZE NAVBAR GAP FIX
-   ========================================================= */
-
-/* 1. Increase the gap to account for the removed padding */
-.nav-menu {
-  grid-gap: 2.5rem; /* Adjust this value to make the gap tighter or wider */
-}
-
-/* 2. Remove horizontal padding so all items are spaced evenly by the grid-gap */
-.nav-links {
-  padding: 0.5rem 0;
-}
-
-/* 3. Ensure the theme toggle and social icons sit perfectly in the center of their grid cells */
-.nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* =========================================================
-   FIX ICON SIZE SWAPPING GAP SHIFT
-   ========================================================= */
-
-/* 1. Lock the button to a specific, fixed size */
-.nav-theme-toggle {
-  margin: 0;
-  width: 1.5rem; /* Set a fixed width */
-  height: 1.5rem; /* Set a fixed height */
-  flex-shrink: 0; /* Prevent it from squishing in flex containers */
-}
-
-/* 2. Force the icon (SVG or FontAwesome <i>) to fit perfectly inside that fixed box */
-.nav-theme-toggle svg,
-.nav-theme-toggle i {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem; /* Adjust if the font icon looks too small or large */
 }
