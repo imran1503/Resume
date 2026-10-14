@@ -2,9 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./HeroSection.css";
 
-function HeroSection() {
+function HeroSection({ isNight = false }) {
+  const nowItems = [
+    "leading Valorant fantasy league",
+    "preparing for Security+ 701",
+    "shipping Beat Revival",
+    "studying Google Cybersecurity",
+  ];
+
   return (
-    <section className="hero">
+    <section className={`hero${isNight ? " hero--night" : ""}`}>
+      <div className="hero-ticker" aria-hidden="true">
+        <div className="hero-ticker-track">
+          {[...nowItems, ...nowItems, ...nowItems].map((item, i) => (
+            <span key={i} className="hero-ticker-item">
+              <span className="ticker-label">NOW</span>
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
       <div className="hero-inner">
         <div className="hero-photo">
           <img

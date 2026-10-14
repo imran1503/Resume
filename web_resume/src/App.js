@@ -1,15 +1,18 @@
 import "./App.css";
+import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
-import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Components/pages/home.js";
 import Experience from "./Components/pages/Experience.js";
 import ContactPage from "./Components/pages/ContactPage.js";
-import { useLocation } from "react-router-dom";
 import { initGA, trackPage } from "./Components/Analytics";
 
 function App() {
   const location = useLocation();
+  const [isNight, setIsNight] = useState(() => {
+    const hour = new Date().getHours();
+    return hour >= 19 || hour < 7;
+  });
 
   useEffect(() => {
     initGA();
@@ -21,15 +24,16 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar isNight={isNight} setIsNight={setIsNight} />
       <Routes>
-        <Route path="/experience" Component={Experience} />
-        <Route path="/contactMe" Component={ContactPage} />
-        <Route path="/" Component={Home} />
-        <Route path="/IL_Web_Resume" Component={Home} />
-        <Route path="*" Component={Home} />
+        <Route path="/experience" element={<Experience isNight={isNight} />} />
+        <Route path="/contactMe" element={<ContactPage isNight={isNight} />} />
+        <Route path="/" element={<Home isNight={isNight} />} />
+        <Route path="/IL_Web_Resume" element={<Home isNight={isNight} />} />
+        <Route path="*" element={<Home isNight={isNight} />} />
       </Routes>
     </>
   );
 }
+
 export default App;

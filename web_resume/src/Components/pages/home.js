@@ -3,10 +3,10 @@ import HeroSection from "../HeroSection";
 import Carousel from "../Carousel";
 import "./home.css";
 
-function Home() {
+function Home({ isNight }) {
   return (
     <main className="home">
-      <HeroSection />
+      <HeroSection isNight={isNight} />
       <Carousel />
     </main>
   );
