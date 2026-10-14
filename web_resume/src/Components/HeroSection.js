@@ -55,19 +55,15 @@ function HeroSection({ isNight = false }) {
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
-
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn--ghost"
-            >
-              Download resume
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" />
-              </svg>
-            </a>
           </div>
+          <a
+            href="/Imran_Latif_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn"
+          >
+            View Resume
+          </a>
 
           <div className="hero-status">
             <span>
