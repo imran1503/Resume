@@ -7,7 +7,7 @@ function Home({ isNight }) {
   return (
     <main className="home">
       <HeroSection isNight={isNight} />
-      <Carousel />
+      <Carousel isNight={isNight} />
     </main>
   );
 }
