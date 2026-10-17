@@ -11,7 +11,7 @@ const items = [
   {
     src: "/images/vflHome.png",
     title: "Valorant Fantasy League",
-    tag: "React / Docker / C / Team Lead",
+    tag: "REACT / NODE",
   },
   {
     src: "/images/insulplantHome.png",
@@ -21,22 +21,22 @@ const items = [
   {
     src: "/images/firstSteamworks.png",
     title: "FIRST Steamworks 2017",
-    tag: "",
+    tag: "ROBOTICS",
   },
   {
     src: "/images/carlaRos.png",
     title: "Autonomous Path Planning",
-    tag: "ROS / Carla",
+    tag: "PYTHON / ROS",
   },
   {
     src: "/images/carlaCamera.png",
     title: "Autonomous Camera Vision",
-    tag: "ROS / Carla",
+    tag: "COMPUTER VISION",
   },
   {
     src: "/images/BRIntro.png",
     title: "The Beat Revival Project",
-    tag: "Reverse engineering",
+    tag: "C# / REVERSE ENG",
   },
   {
     src: "/images/playerugc.png",
@@ -56,7 +56,6 @@ export default function Carousel({ isNight }) {
     if (isAnimating) return;
     setIsAnimating(true);
 
-    // Google Analytics Event Tracking
     if (typeof window.gtag === "function") {
       window.gtag("event", "carousel_interaction", {
         event_category: "Engagement",
@@ -138,7 +137,7 @@ export default function Carousel({ isNight }) {
   return (
     <section className={`carousel-wrapper ${isNight ? "carousel-night" : ""}`}>
       <div className="carousel-header">
-        <span className="eyebrow">PROJECTS // DATA STREAM</span>
+        <span className="eyebrow">The Archive</span>
         <button
           className="hud-btn"
           onClick={handleSwipe}
@@ -161,9 +160,7 @@ export default function Carousel({ isNight }) {
           </div>
 
           <div className="carousel-info">
-            <span className="tag">
-              FILE {String(index + 1).padStart(2, "0")} // {items[index].tag}
-            </span>
+            <span className="tag">{items[index].tag}</span>
             <h3>{items[index].title}</h3>
           </div>
 

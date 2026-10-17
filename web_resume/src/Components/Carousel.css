@@ -17,10 +17,12 @@
 }
 
 .eyebrow {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  font-family: "Good Times", sans-serif;
+  font-size: 1.5rem; /* Increased from 0.7rem */
+  font-weight: 700; /* Made it bold */
+  letter-spacing: 0.05em; /* Tightened from 0.3em */
   color: #e4002b;
+  text-transform: uppercase; /* Ensures it stays punchy */
 }
 
 .hud-btn {
