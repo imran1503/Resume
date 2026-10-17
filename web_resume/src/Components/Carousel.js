@@ -143,7 +143,7 @@ export default function Carousel({ isNight }) {
           onClick={handleSwipe}
           disabled={isAnimating}
         >
-          [ BREACH FILE ]
+          {">>"} BREACH FILE
         </button>
       </div>
 

@@ -155,7 +155,7 @@
 }
 
 .tag {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Good Times", sans-serif;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   color: #e4002b;
@@ -165,8 +165,9 @@
 
 .carousel-info h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1 rem;
   font-weight: 500;
+  font-family: "Good Times", sans-serif;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
