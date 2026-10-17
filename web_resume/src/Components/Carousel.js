@@ -1,185 +1,177 @@
-import "./Carousel.css"; // External CSS file
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useRef } from "react";
+import gsap from "gsap";
+import "./Carousel.css";
 
+const items = [
+  {
+    src: "/images/2200Hang_New.jpeg",
+    title: "FIRST Stronghold 2016",
+    tag: "ROBOTICS",
+  },
+  {
+    src: "/images/vflHome.png",
+    title: "Valorant Fantasy League",
+    tag: "REACT / NODE",
+  },
+  {
+    src: "/images/insulplantHome.png",
+    title: "InsulPlant",
+    tag: "PHP / MYSQL",
+  },
+  {
+    src: "/images/firstSteamworks.png",
+    title: "FIRST Steamworks 2017",
+    tag: "ROBOTICS",
+  },
+  {
+    src: "/images/carlaRos.png",
+    title: "Autonomous Path Planning",
+    tag: "PYTHON / ROS",
+  },
+  {
+    src: "/images/carlaCamera.png",
+    title: "Autonomous Camera Vision",
+    tag: "COMPUTER VISION",
+  },
+  {
+    src: "/images/BRIntro.png",
+    title: "The Beat Revival Project",
+    tag: "C# / REVERSE ENG",
+  },
+  {
+    src: "/images/playerugc.png",
+    title: "User Generated Content",
+    tag: "GAME MODDING",
+  },
+];
 
-export default function Carousel({
-  items = null,
-  autoPlay = true,
-  interval = 5000,
-  showArrows = true,
-  showIndicators = true,
-  className = "simple-carousel full-width height-50%",
-}) {
-  const defaultItems = [
-    {
-      src: process.env.PUBLIC_URL + "/images/2200Hang_New.jpeg",
-      alt: "2200",
-      caption: "FIRST Stronghold 2016",
-    },
-    {
-      src: process.env.PUBLIC_URL + "/images/vflHome.png",
-      alt: "VFL image",
-      caption: "Home page of VFL",
-    },
-    {
-      src: process.env.PUBLIC_URL + "/images/insulplantHome.png",
-      alt: "InsulPlant image",
-    },
-    {
-      src: process.env.PUBLIC_URL + "/images/firstSteamworks.png",
-      alt: "firstSteamworks",
-      caption: "FIRST Steamworks 2017",
-    },
-    {
-      src: process.env.PUBLIC_URL + "/images/carlaRos.png",
-      alt: "carlaRos",
-      caption: "Capstone Project - Autonmous Vehicle Path Planning",
-    },
-    {
-      src: process.env.PUBLIC_URL + "/images/carlaCamera.png",
-      alt: "carlaCamera",
-      caption: "Capstone Project - Autonmous Vehicle Path Planning",
-    },
-    {
-      src: process.env.PUBLIC_URL + "/images/BRIntro.png",
-      alt: "MEC Intro",
-      caption: "The Beat Revival Project",
-    },
-    {
-      src: process.env.PUBLIC_URL + "/images/playerugc.png",
-      alt: "Player UGC",
-      caption: "User generated time trials and more",
-    },
-  ];
-
-  const normalizedItems =
-    items && items.length > 0
-      ? items.map((item) =>
-          typeof item === "string" || item?.src ? (
-            <div className="carousel-content">
-              <img
-                src={typeof item === "string" ? item : item.src}
-                alt={item.alt || "carousel-item"}
-                className="carousel-image"
-              />
-              {item.caption && (
-                <div className="carousel-caption">{item.caption}</div>
-              )}
-            </div>
-          ) : (
-            item
-          )
-        )
-      : defaultItems.map((i) => (
-          <div className="carousel-content" key={i.src}>
-            <img src={i.src} alt={i.alt} className="carousel-image" />
-            {i.caption && <div className="carousel-caption">{i.caption}</div>}
-          </div>
-        ));
-
-  const count = normalizedItems.length;
+export default function Carousel({ isNight }) {
   const [index, setIndex] = useState(0);
-  const intervalRef = useRef(null);
-  const containerRef = useRef(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const goTo = (to) => {
-    const safe = ((to % count) + count) % count;
-    setIndex(safe);
+  const cardRef = useRef(null);
+  const slashRef = useRef(null);
+
+  const handleSwipe = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "carousel_interaction", {
+        event_category: "Engagement",
+        event_label: items[index].title,
+        value: index + 1,
+      });
+    }
+
+    const tl = gsap.timeline({
+      onComplete: () => setIsAnimating(false),
+    });
+
+    tl.set(slashRef.current, {
+      x: "100vw",
+      y: "-50vh",
+      rotation: -45,
+      opacity: 0,
+    });
+    tl.set(cardRef.current, { x: 0, y: 0, rotation: 0, opacity: 1, scale: 1 });
+
+    tl.to(slashRef.current, {
+      x: "-100vw",
+      y: "50vh",
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.in",
+    });
+
+    tl.to(
+      cardRef.current,
+      {
+        x: -20,
+        y: 10,
+        duration: 0.05,
+        repeat: 3,
+        yoyo: true,
+        ease: "none",
+      },
+      "-=0.1",
+    );
+
+    tl.to(cardRef.current, {
+      x: "-100vw",
+      y: "50vh",
+      rotation: -15,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+    });
+
+    tl.to(
+      slashRef.current,
+      {
+        opacity: 0,
+        duration: 0.1,
+      },
+      "<",
+    );
+
+    tl.call(() => {
+      setIndex((prev) => (prev + 1) % items.length);
+    });
+
+    tl.fromTo(
+      cardRef.current,
+      { x: 0, y: "-100vh", rotation: 10, opacity: 0, scale: 0.95 },
+      {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      },
+    );
   };
 
-  const next = () => goTo(index + 1);
-  const prev = () => goTo(index - 1);
-
-  useEffect(() => {
-    if (!autoPlay) return;
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setIndex((i) => (i + 1) % count);
-    }, interval);
-    return () => clearInterval(intervalRef.current);
-  }, [autoPlay, interval, count]);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el || !autoPlay) return;
-    const onEnter = () => clearInterval(intervalRef.current);
-    const onLeave = () => {
-      clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(
-        () => setIndex((i) => (i + 1) % count),
-        interval
-      );
-    };
-    el.addEventListener("mouseenter", onEnter);
-    el.addEventListener("mouseleave", onLeave);
-    return () => {
-      el.removeEventListener("mouseenter", onEnter);
-      el.removeEventListener("mouseleave", onLeave);
-    };
-  }, [autoPlay, interval, count]);
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  });
-
   return (
-    <div ref={containerRef} className={`${className}`}>
-      <div className="carousel-viewport">
-        {/* Remove the section wrapper if not needed, or keep it with proper styling */}
-        <div className="carousel-title">Projects & Highlights</div>
-        <div
-          className="carousel-track"
-          style={{
-            width: `${count * 100}%`,
-            transform: `translateX(-${index * (100 / count)}%)`,
-          }}
+    <section className={`carousel-wrapper ${isNight ? "carousel-night" : ""}`}>
+      <div className="carousel-header">
+        <span className="eyebrow">The Archive</span>
+        <button
+          className="hud-btn"
+          onClick={handleSwipe}
+          disabled={isAnimating}
         >
-          {normalizedItems.map((child, i) => (
-            <div
-              key={i}
-              className="carousel-slide taller"
-              style={{ width: `${100 / count}%` }}
-            >
-              {child}
-            </div>
-          ))}
-        </div>
-        {showArrows && (
-          <>
-            <button
-              aria-label="Previous"
-              onClick={prev}
-              className="carousel-arrow left aligned"
-            >
-              <i class="fa-solid fa-angle-left"></i>
-            </button>
-            <button
-              aria-label="Next"
-              onClick={next}
-              className="carousel-arrow right aligned"
-            >
-              <i class="fa-solid fa-angle-right"></i>
-            </button>
-          </>
-        )}{" "}
-        {showIndicators && (
-          <div className="carousel-indicators">
-            {Array.from({ length: count }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                className={`carousel-indicator ${i === index ? "active" : ""}`}
-                aria-label={`Go to slide ${i + 1}`}
-              ></button>
-            ))}
-          </div>
-        )}
+          {">>"} BREACH FILE
+        </button>
       </div>
-    </div>
+
+      <div className="holo-desk">
+        <div className="holo-grid"></div>
+
+        <div className="holo-card-wrapper" ref={cardRef}>
+          <div className="holo-image-container">
+            <img
+              src={process.env.PUBLIC_URL + items[index].src}
+              alt={items[index].title}
+            />
+            <div className="holo-card-scanlines"></div>
+          </div>
+
+          <div className="carousel-info">
+            <span className="tag">{items[index].tag}</span>
+            <h3>{items[index].title}</h3>
+          </div>
+
+          <div className="hud-corner top-left"></div>
+          <div className="hud-corner top-right"></div>
+          <div className="hud-corner bottom-left"></div>
+          <div className="hud-corner bottom-right"></div>
+        </div>
+      </div>
+
+      <div className="cyber-slash" ref={slashRef}></div>
+    </section>
   );
 }
