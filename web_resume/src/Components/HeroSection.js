@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./HeroSection.css";
 
-// ─────────────────────────────────────────────────────────
-// EDIT THIS LIST — add/remove words freely.
-// The layout auto-distributes whatever is here.
-// ─────────────────────────────────────────────────────────
 const WORDS = [
   "React",
   "Node.js",
@@ -25,7 +21,6 @@ const WORDS = [
   "Git",
   "Python",
 ];
-// ─────────────────────────────────────────────────────────
 
 function makePositions(count) {
   const slots = [];
