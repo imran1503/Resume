@@ -11,7 +11,7 @@ const items = [
   {
     src: "/images/vflHome.png",
     title: "Valorant Fantasy League",
-    tag: "REACT / NODE",
+    tag: "React / Docker / C / Team Lead",
   },
   {
     src: "/images/insulplantHome.png",
@@ -21,22 +21,22 @@ const items = [
   {
     src: "/images/firstSteamworks.png",
     title: "FIRST Steamworks 2017",
-    tag: "ROBOTICS",
+    tag: "",
   },
   {
     src: "/images/carlaRos.png",
     title: "Autonomous Path Planning",
-    tag: "PYTHON / ROS",
+    tag: "ROS / Carla",
   },
   {
     src: "/images/carlaCamera.png",
     title: "Autonomous Camera Vision",
-    tag: "COMPUTER VISION",
+    tag: "ROS / Carla",
   },
   {
     src: "/images/BRIntro.png",
     title: "The Beat Revival Project",
-    tag: "C# / REVERSE ENG",
+    tag: "Reverse engineering",
   },
   {
     src: "/images/playerugc.png",
@@ -45,77 +45,75 @@ const items = [
   },
 ];
 
-const FaithArm = React.forwardRef((props, ref) => (
-  <svg viewBox="0 0 600 300" ref={ref} className="faith-arm-svg" {...props}>
-    <polygon points="600,50 250,100 230,220 600,250" fill="#f4e4db" />
-    <polygon points="550,80 500,90 510,110 560,100" fill="#111" />
-    <polygon points="480,130 400,145 410,170 490,155" fill="#111" />
-    <polygon points="380,110 320,125 330,145 390,130" fill="#111" />
-    <polygon points="450,180 380,195 390,220 460,205" fill="#111" />
-    <polygon points="250,100 150,70 120,140 230,220" fill="#222" />
-    <polygon points="230,110 190,125 200,160 240,145" fill="#e4002b" />
-    <polygon points="150,70 50,40 20,110 120,140" fill="#1a1a1a" />
-    <polygon points="50,40 -10,20 -20,60 40,70" fill="#1a1a1a" />
-    <polygon points="-10,20 -20,60 -5,65 10,25" fill="#e4002b" />
-    <polygon points="40,70 -30,65 -40,110 30,100" fill="#1a1a1a" />
-    <polygon points="-30,65 -40,110 -25,110 -15,70" fill="#e4002b" />
-    <polygon points="30,100 -20,120 -10,160 50,140" fill="#1a1a1a" />
-    <polygon points="-20,120 -10,160 5,155 -5,125" fill="#e4002b" />
-    <polygon points="50,140 10,170 40,210 90,170" fill="#1a1a1a" />
-    <polygon points="10,170 40,210 55,200 25,175" fill="#e4002b" />
-  </svg>
-));
-
 export default function Carousel({ isNight }) {
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const armRef = useRef(null);
   const cardRef = useRef(null);
+  const slashRef = useRef(null);
 
   const handleSwipe = () => {
     if (isAnimating) return;
     setIsAnimating(true);
 
+    // Google Analytics Event Tracking
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "carousel_interaction", {
+        event_category: "Engagement",
+        event_label: items[index].title,
+        value: index + 1,
+      });
+    }
+
     const tl = gsap.timeline({
       onComplete: () => setIsAnimating(false),
     });
 
-    tl.set(armRef.current, { x: "0vw", y: "100vh", rotation: 90, opacity: 0 });
-
-    tl.to(armRef.current, {
-      x: "0vw",
-      y: "25vh",
-      rotation: 90,
-      opacity: 1,
-      duration: 0.4,
-      ease: "power3.out",
+    tl.set(slashRef.current, {
+      x: "100vw",
+      y: "-50vh",
+      rotation: -45,
+      opacity: 0,
     });
+    tl.set(cardRef.current, { x: 0, y: 0, rotation: 0, opacity: 1, scale: 1 });
 
-    tl.to(
-      armRef.current,
-      {
-        x: "-50vw",
-        y: "120vh",
-        rotation: 90,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.in",
-      },
-      "grab",
-    );
+    tl.to(slashRef.current, {
+      x: "-100vw",
+      y: "50vh",
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.in",
+    });
 
     tl.to(
       cardRef.current,
       {
-        x: "-50vw",
-        y: "100vh",
-        rotation: 15,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.in",
+        x: -20,
+        y: 10,
+        duration: 0.05,
+        repeat: 3,
+        yoyo: true,
+        ease: "none",
       },
-      "grab",
+      "-=0.1",
+    );
+
+    tl.to(cardRef.current, {
+      x: "-100vw",
+      y: "50vh",
+      rotation: -15,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+    });
+
+    tl.to(
+      slashRef.current,
+      {
+        opacity: 0,
+        duration: 0.1,
+      },
+      "<",
     );
 
     tl.call(() => {
@@ -124,13 +122,14 @@ export default function Carousel({ isNight }) {
 
     tl.fromTo(
       cardRef.current,
-      { x: "0%", y: "-100vh", rotation: -10, opacity: 0 },
+      { x: 0, y: "-100vh", rotation: 10, opacity: 0, scale: 0.95 },
       {
-        x: "0%",
-        y: "0%",
+        x: 0,
+        y: 0,
         rotation: 0,
         opacity: 1,
-        duration: 0.5,
+        scale: 1,
+        duration: 0.4,
         ease: "power2.out",
       },
     );
@@ -145,7 +144,7 @@ export default function Carousel({ isNight }) {
           onClick={handleSwipe}
           disabled={isAnimating}
         >
-          [ GRAB NEXT ]
+          [ BREACH FILE ]
         </button>
       </div>
 
@@ -153,7 +152,6 @@ export default function Carousel({ isNight }) {
         <div className="holo-grid"></div>
 
         <div className="holo-card-wrapper" ref={cardRef}>
-          {/* NEW WRAPPER FOR IMAGE */}
           <div className="holo-image-container">
             <img
               src={process.env.PUBLIC_URL + items[index].src}
@@ -176,7 +174,7 @@ export default function Carousel({ isNight }) {
         </div>
       </div>
 
-      <FaithArm ref={armRef} />
+      <div className="cyber-slash" ref={slashRef}></div>
     </section>
   );
 }
