@@ -1,21 +1,8 @@
-// import React from 'react';
-// import './Button.css';
-// import { Link } from 'react-router-dom';
-
-// export function Button() {
-//   return (
-//     <Link to='sign-up'>
-//       <button className='btn'>Sign Up</button>
-//     </Link>
-//   );
-// }
-
 import React from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
 
 const STYLES = ["btn--primary", "btn--outline", "btn--test"];
-
 const SIZES = ["btn--small", "btn--medium", "btn--large"];
 
 export const Button = ({
@@ -32,15 +19,36 @@ export const Button = ({
 
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
-  return (
-    <Link to={MyLink} className="btn-mobile">
-      <button
-        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+  const className = `btn ${checkButtonStyle} ${checkButtonSize}`;
+
+  // If it's an external link, use a standard <a> tag
+  if (MyLink && MyLink.startsWith("http")) {
+    return (
+      <a
+        href={MyLink}
+        className={className}
+        target="_blank"
+        rel="noopener noreferrer"
         onClick={onClick}
-        type={type}
       >
         {children}
-      </button>
-    </Link>
+      </a>
+    );
+  }
+
+  // If it's an internal route, use React Router <Link>
+  if (MyLink) {
+    return (
+      <Link to={MyLink} className={className} onClick={onClick}>
+        {children}
+      </Link>
+    );
+  }
+
+  // Fallback if there's no link, just a button
+  return (
+    <button className={className} onClick={onClick} type={type}>
+      {children}
+    </button>
   );
 };

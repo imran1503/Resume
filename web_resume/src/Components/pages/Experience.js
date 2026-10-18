@@ -3,15 +3,21 @@ import "../Timeline.css";
 import { Button } from "../Button";
 import Timeline from "../Timeline";
 
-function Experience() {
-
+function Experience({ isNight }) {
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
+
   return (
-    <div className="Exp">
-      <Timeline />
+    <div
+      style={{
+        width: "100%",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Timeline isNight={isNight} />
     </div>
   );
 }
