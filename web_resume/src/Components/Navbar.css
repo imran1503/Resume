@@ -1,8 +1,3 @@
-/* =========================================================
-   MIRROR'S EDGE CATALYST — NAVBAR
-   Runner Vision red accent, flat surfaces, sharp corners
-   ========================================================= */
-
 :root {
   --nav-accent: #e4002b; /* Mirror's Edge Catalyst red */
   --nav-accent-glow: rgba(228, 0, 43, 0.55); /* Runner Vision highlight glow */
@@ -11,10 +6,6 @@
   --nav-line: #2a2a2a; /* hairline separators */
 }
 
-/* =========================================================
-   NAVBAR SHELL
-   ========================================================= */
-
 .navbar {
   background: var(--nav-ink);
   border-bottom: 2px solid var(--nav-accent); /* single red line under the bar */
@@ -22,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -44,7 +35,7 @@
   cursor: pointer;
   text-decoration: none;
   font-family: "Good Times", sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
   letter-spacing: 0.05em;
