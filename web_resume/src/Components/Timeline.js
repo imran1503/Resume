@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Timeline.css";
 import { Button } from "./Button";
 
@@ -214,24 +214,76 @@ const jobs = [
 function Timeline({ isNight }) {
   const [activeId, setActiveId] = useState(jobs[0].id);
 
+  const trackerRef = useRef(null);
+  const [thumbHeight, setThumbHeight] = useState(100);
+  const [thumbTop, setThumbTop] = useState(0);
+
+  // 1. Scroll Spy (Detects which section is on screen)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
+          if (entry.isIntersecting) setActiveId(entry.target.id);
         });
       },
       { rootMargin: "-20% 0px -70% 0px" },
     );
-
     jobs.forEach((job) => {
       const el = document.getElementById(job.id);
       if (el) observer.observe(el);
     });
-
     return () => observer.disconnect();
+  }, []);
+
+  // 2. Auto-Scroll the Sidebar (Keeps active item centered)
+  useEffect(() => {
+    if (activeId && trackerRef.current) {
+      const activeElement = trackerRef.current.querySelector(
+        `.exp-tracker-item.active`,
+      );
+      if (activeElement) {
+        const container = trackerRef.current;
+        const containerRect = container.getBoundingClientRect();
+        const activeRect = activeElement.getBoundingClientRect();
+
+        // Calculate distance from active element to center of container
+        const offset = activeRect.top - containerRect.top;
+        const scrollTarget =
+          container.scrollTop +
+          offset -
+          containerRect.height / 2 +
+          activeRect.height / 2;
+
+        container.scrollTo({
+          top: scrollTarget,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [activeId]);
+
+  // 3. Custom Scrollbar Logic
+  const handleScroll = () => {
+    if (!trackerRef.current) return;
+    const { scrollTop, scrollHeight, clientHeight } = trackerRef.current;
+
+    if (scrollHeight <= clientHeight) {
+      setThumbHeight(100);
+      setThumbTop(0);
+      return;
+    }
+
+    const scrollRatio = scrollTop / (scrollHeight - clientHeight);
+    const heightPercent = (clientHeight / scrollHeight) * 100;
+
+    setThumbHeight(heightPercent);
+    setThumbTop(scrollRatio * (100 - heightPercent));
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("resize", handleScroll);
+    return () => window.removeEventListener("resize", handleScroll);
   }, []);
 
   const scrollToSection = (id) => {
@@ -246,17 +298,34 @@ function Timeline({ isNight }) {
     <div className={`exp-layout ${isNight ? "exp-night" : ""}`}>
       <div className="exp-container">
         <aside className="exp-sidebar">
-          <div className="exp-tracker">
-            {jobs.map((job) => (
+          <div className="exp-tracker-wrapper">
+            <div
+              className="exp-tracker"
+              ref={trackerRef}
+              onScroll={handleScroll}
+            >
+              {jobs.map((job) => (
+                <div
+                  key={job.id}
+                  className={`exp-tracker-item ${activeId === job.id ? "active" : ""}`}
+                  onClick={() => scrollToSection(job.id)}
+                >
+                  <span className="exp-date">{job.date}</span>
+                  <img
+                    src={process.env.PUBLIC_URL + job.logo}
+                    alt={job.title}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* THE CUSTOM SCROLLBAR */}
+            <div className="custom-scrollbar">
               <div
-                key={job.id}
-                className={`exp-tracker-item ${activeId === job.id ? "active" : ""}`}
-                onClick={() => scrollToSection(job.id)}
-              >
-                <span className="exp-date">{job.date}</span>
-                <img src={process.env.PUBLIC_URL + job.logo} alt={job.title} />
-              </div>
-            ))}
+                className="custom-scrollbar-thumb"
+                style={{ height: `${thumbHeight}%`, top: `${thumbTop}%` }}
+              ></div>
+            </div>
           </div>
         </aside>
 
@@ -264,7 +333,6 @@ function Timeline({ isNight }) {
           {jobs.map((job, index) => (
             <article key={job.id} id={job.id} className="exp-block">
               <div className="exp-block-header">
-                {/* Removed File #, Added Date */}
                 <h2>{job.title}</h2>
                 <span className="exp-date-block">{job.date}</span>
                 <div className="exp-tags">
@@ -273,7 +341,6 @@ function Timeline({ isNight }) {
                   ))}
                 </div>
               </div>
-
               <div className="exp-body">
                 {job.paragraphs.map((p, i) => (
                   <p key={i}>{p}</p>
@@ -284,7 +351,6 @@ function Timeline({ isNight }) {
                   ))}
                 </ul>
               </div>
-
               {job.links && job.links.length > 0 && (
                 <div className="exp-actions">
                   {job.links.map((link, i) => (
